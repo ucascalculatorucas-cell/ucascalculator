@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="uc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="55%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#c026d3"/>
+    </linearGradient>
+    <filter id="uc-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <clipPath id="uc-clip">
+      <rect x="2" y="2" width="60" height="60" rx="14" ry="14"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#uc-clip)">
+    <rect x="2" y="2" width="60" height="60" rx="14" ry="14" fill="url(#uc-bg)"/>
+    <g opacity="0.14" fill="#ffffff">
+      <rect x="10" y="10" width="10" height="4" rx="1.2"/>
+      <rect x="22" y="10" width="10" height="4" rx="1.2"/>
+      <rect x="34" y="10" width="10" height="4" rx="1.2"/>
+      <rect x="10" y="18" width="4" height="4" rx="0.8"/>
+      <rect x="16" y="18" width="4" height="4" rx="0.8"/>
+      <rect x="22" y="18" width="4" height="4" rx="0.8"/>
+      <rect x="28" y="18" width="4" height="4" rx="0.8"/>
+      <rect x="34" y="18" width="10" height="4" rx="0.8"/>
+    </g>
+  </g>
+  <g filter="url(#uc-shadow)" fill="#ffffff" text-rendering="geometricPrecision">
+    <text x="50%" y="66%" dominant-baseline="middle" text-anchor="middle"
+          font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+          font-weight="800" font-size="24" letter-spacing="-0.5">
+      UC
+    </text>
+  </g>
+</svg>

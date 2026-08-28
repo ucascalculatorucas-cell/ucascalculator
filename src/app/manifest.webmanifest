@@ -1,0 +1,22 @@
+{
+  "name": "UCASCalculator.com",
+  "short_name": "UCAS Calc",
+  "description": "Free UCAS Tariff points calculator 2025/2026 — A-Level, BTEC, IB, Scottish Highers, T-Levels, Access to HE, EPQ.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "theme_color": "#4f46e5",
+  "background_color": "#fafafa",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
