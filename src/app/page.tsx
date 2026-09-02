@@ -254,7 +254,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="mx-auto mt-8 w-full max-w-[1000px]">
+            <div className="mx-auto mt-8 w-full">
             <div id="calculator" aria-label="UCAS Tariff Points Calculator widget">
               <UcasCalculator />
             </div>
@@ -263,7 +263,7 @@ export default function Home() {
         </section>
 
         {/* ============ ARTICLE / CONTENT CONTAINER (max-w-[1000px] same as calc page) ============ */}
-        <article className="mx-auto w-full max-w-[1000px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <article className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <div className="space-y-16">
             {/* A. WHAT IS UCAS TARIFF — TOPICAL CLUSTER 1 */}
             <section id="about-tool" aria-labelledby="about-heading">

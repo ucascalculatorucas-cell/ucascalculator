@@ -9,7 +9,13 @@ import {
   REFERENCE_BENCHMARKS,
   interpretPoints,
 } from "@/lib/ucasTariff";
-import { QualIcon, IconCalculator, IconLightbulb, IconCheck } from "@/components/icons";
+import {
+  QualIcon,
+  IconCalculator,
+  IconLightbulb,
+  IconCheck,
+  IconPlus,
+} from "@/components/icons";
 
 function makeId() {
   return Math.random().toString(36).slice(2, 10);
@@ -24,7 +30,8 @@ export default function UcasCalculator() {
   const [editingId, setEditingId] = useState<string | null>(null);
 
   const currentQual = QUALIFICATIONS[qualKey];
-  const currentPoints = currentQual?.grades.find((g) => g.value === gradeValue)?.points ?? 0;
+  const currentGrade = currentQual?.grades.find((g) => g.value === gradeValue);
+  const currentPoints = currentGrade?.points ?? 0;
 
   const total = useMemo(
     () => items.reduce((sum, i) => sum + i.points, 0),
@@ -190,85 +197,201 @@ export default function UcasCalculator() {
       </div>
 
       {/* ADD FORM */}
-      <fieldset className="mb-5 grid grid-cols-1 gap-5 rounded-xl border border-zinc-200 p-5 sm:grid-cols-[1fr_1fr_auto] sm:items-start sm:gap-4 dark:border-zinc-800">
+      <fieldset className="mb-5 rounded-xl border border-zinc-200 p-5 dark:border-zinc-800">
         <legend className="sr-only">Add a qualification</legend>
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="qual-type"
-            className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
-          >
-            Qualification type
-          </label>
-          <select
-            id="qual-type"
-            value={qualKey}
-            onChange={(e) => handleQualChange(e.target.value as QualificationKey)}
-            className="min-h-[42px] w-full rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
-            aria-describedby="qual-type-help"
-          >
-            {Object.values(QUALIFICATIONS).map((q) => (
-              <option key={q.key} value={q.key} disabled={!q.available}>
-                {q.name}
-                {q.available ? "" : " — coming soon"}
-              </option>
-            ))}
-          </select>
-          <p id="qual-type-help" className="min-h-[2.5rem] pt-0.5 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-            {currentQual?.description}
-          </p>
-        </div>
 
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="grade"
-            className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
-          >
-            Grade
-          </label>
-          <select
-            id="grade"
-            value={gradeValue}
-            onChange={(e) => setGradeValue(e.target.value)}
-            disabled={!currentQual?.available}
-            className="min-h-[42px] w-full rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 disabled:cursor-not-allowed disabled:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 disabled:dark:bg-zinc-900"
-            aria-describedby="grade-points"
-          >
-            {currentQual?.grades.map((g) => (
-              <option key={g.value} value={g.value}>
-                {g.label}
-              </option>
-            ))}
-          </select>
-          <p id="grade-points" className="min-h-[2.5rem] pt-0.5 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-            {currentQual?.available ? (
-              <>
-                Worth <span className="font-semibold text-zinc-700 dark:text-zinc-200">{currentPoints}</span>{" "}
-                UCAS points
-              </>
-            ) : (
-              <>Conversion not included — see guide below.</>
-            )}
-          </p>
-        </div>
-
-        <div className="flex pt-[6px] items-end gap-2 sm:items-start sm:pt-[22px]">
-          <button
-            type="button"
-            onClick={handleAddOrUpdate}
-            disabled={!currentQual?.available}
-            className="inline-flex h-11 w-full items-center justify-center rounded-lg bg-indigo-600 px-5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:focus:ring-offset-zinc-950 sm:w-auto"
-          >
-            {editingId ? "Update qualification" : "Add qualification"}
-          </button>
-          {editingId && (
-            <button
-              type="button"
-              onClick={handleCancelEdit}
-              className="inline-flex h-11 w-full items-center justify-center rounded-lg border border-zinc-300 bg-white px-5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800 sm:w-auto"
+        {/* ROW 1: Qualification type dropdown + current selected info */}
+        <div className="mb-5 grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div className="flex flex-col gap-1.5">
+            <label
+              htmlFor="qual-type"
+              className="block text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
-              Cancel
-            </button>
-          )}
+              Qualification type
+            </label>
+            <select
+              id="qual-type"
+              value={qualKey}
+              onChange={(e) => handleQualChange(e.target.value as QualificationKey)}
+              className="min-h-[46px] w-full rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50"
+              aria-describedby="qual-type-help"
+            >
+              {Object.values(QUALIFICATIONS).map((q) => (
+                <option key={q.key} value={q.key} disabled={!q.available}>
+                  {q.name}
+                  {q.available ? "" : " — coming soon"}
+                </option>
+              ))}
+            </select>
+            <p id="qual-type-help" className="min-h-[1.75rem] pt-0.5 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+              {currentQual?.description}
+            </p>
+          </div>
+
+          {/* Live grade + points preview */}
+          <div className="flex flex-col gap-1.5">
+            <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+              Selected
+            </label>
+            <div className="flex min-h-[46px] items-center justify-between gap-3 rounded-lg border border-indigo-100 bg-gradient-to-r from-indigo-50 via-violet-50 to-indigo-50 px-4 py-2.5 dark:border-indigo-900/50 dark:from-indigo-950/40 dark:via-violet-950/30 dark:to-indigo-950/40">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-indigo-600 text-white dark:bg-indigo-500">
+                  <QualIcon qualKey={qualKey} size={16} />
+                </div>
+                <div className="min-w-0">
+                  <div className="truncate text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                    {currentGrade?.label ?? "—"}
+                  </div>
+                  <div className="truncate text-[11px] text-zinc-500 dark:text-zinc-400">
+                    {currentQual?.shortName}
+                  </div>
+                </div>
+              </div>
+              <div className="text-right">
+                <div className="text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                  Points
+                </div>
+                <div className="text-xl font-bold tabular-nums text-indigo-700 dark:text-indigo-300">
+                  {currentQual?.available ? currentPoints : "—"}
+                </div>
+              </div>
+            </div>
+            <p className="min-h-[1.75rem] pt-0.5 text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+              {editingId ? "Editing an existing qualification." : "Pick a grade below and tap Add."}
+            </p>
+          </div>
+        </div>
+
+        {/* ROW 2: Grade keypad (grid buttons + actions column) */}
+        <div className="flex flex-col gap-3 lg:flex-row">
+          {/* Grade buttons grid — teal/cyan like reference calculator */}
+          <div className="flex-1">
+            <div className="mb-2 flex items-center justify-between">
+              <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                Grade
+              </label>
+              <span className="text-[11px] text-zinc-500 dark:text-zinc-400">
+                Tap a grade to select
+              </span>
+            </div>
+
+            {currentQual?.available ? (
+              <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                {currentQual.grades.map((g) => {
+                  const isSelected = g.value === gradeValue;
+                  return (
+                    <button
+                      key={g.value}
+                      type="button"
+                      onClick={() => setGradeValue(g.value)}
+                      aria-pressed={isSelected}
+                      className={`group relative flex aspect-square min-h-[72px] flex-col items-center justify-center rounded-xl border-2 p-2 text-center transition-all duration-150 sm:min-h-[84px] ${
+                        isSelected
+                          ? "border-teal-800 bg-teal-700 text-white shadow-md ring-2 ring-teal-500/30 dark:border-teal-900 dark:bg-teal-800 dark:ring-teal-400/30"
+                          : "border-teal-500/20 bg-teal-600 text-white shadow-sm hover:border-teal-700 hover:bg-teal-700 hover:shadow-md active:scale-[0.98] dark:border-teal-400/20 dark:bg-teal-700 dark:hover:bg-teal-800"
+                      }`}
+                    >
+                      <span className="text-lg font-bold tracking-tight sm:text-xl md:text-2xl">
+                        {g.label}
+                      </span>
+                      <span
+                        className={`mt-1 text-[10px] font-medium opacity-90 sm:text-xs ${
+                          isSelected
+                            ? "text-teal-100 dark:text-teal-100"
+                            : "text-teal-100/90 dark:text-teal-100/80"
+                        }`}
+                      >
+                        {g.points} pts
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="flex min-h-[140px] items-center justify-center rounded-xl border-2 border-dashed border-zinc-300 bg-zinc-50 text-sm text-zinc-500 dark:border-zinc-700 dark:bg-zinc-900/40 dark:text-zinc-400">
+                Conversion not included — see guide below.
+              </div>
+            )}
+          </div>
+
+          {/* Actions column — gold/amber buttons like reference calculator */}
+          <div className="lg:w-28">
+            <div className="mb-2 lg:h-[1.25rem]" />
+            <div className="grid grid-cols-3 gap-2 lg:grid-cols-1 lg:gap-2 lg:h-full">
+              {/* CLEAR — clear all items */}
+              <button
+                type="button"
+                onClick={handleReset}
+                disabled={items.length === 0}
+                className="group flex flex-col items-center justify-center gap-1 rounded-xl border-2 border-amber-400/20 bg-amber-500 py-3 text-white shadow-sm transition-all duration-150 hover:bg-amber-600 hover:shadow-md active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-amber-500 lg:flex-1 lg:py-4 lg:justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  className="opacity-90"
+                >
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                  <path d="M3 3v5h5" />
+                </svg>
+                <span className="text-xs font-bold tracking-wider uppercase sm:text-sm">
+                  Clear
+                </span>
+              </button>
+
+              {/* DELETE — clear selection / cancel edit */}
+              <button
+                type="button"
+                onClick={editingId ? handleCancelEdit : () => {
+                  if (currentQual?.grades?.[0]) {
+                    setGradeValue(currentQual.grades[0].value);
+                  }
+                }}
+                className="group flex flex-col items-center justify-center gap-1 rounded-xl border-2 border-amber-400/20 bg-amber-500 py-3 text-white shadow-sm transition-all duration-150 hover:bg-amber-600 hover:shadow-md active:scale-[0.98] lg:flex-1 lg:py-4 lg:justify-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  className="opacity-90"
+                >
+                  <path d="m9 8-5 4 5 4" />
+                  <path d="M20 4v16" />
+                  <path d="M20 20H4" />
+                </svg>
+                <span className="text-xs font-bold tracking-wider uppercase sm:text-sm">
+                  {editingId ? "Cancel" : "Delete"}
+                </span>
+              </button>
+
+              {/* ADD — add/update qualification */}
+              <button
+                type="button"
+                onClick={handleAddOrUpdate}
+                disabled={!currentQual?.available}
+                className="group flex flex-col items-center justify-center gap-1 rounded-xl border-2 border-amber-400/20 bg-amber-500 py-3 text-white shadow-sm transition-all duration-150 hover:bg-amber-600 hover:shadow-md active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-amber-500 lg:flex-[2] lg:py-6 lg:justify-center"
+              >
+                <IconPlus size={22} className="opacity-95" />
+                <span className="text-xs font-bold tracking-wider uppercase sm:text-sm">
+                  {editingId ? "Update" : "Add"}
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
       </fieldset>
 
