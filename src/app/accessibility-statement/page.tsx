@@ -28,7 +28,7 @@ const LAST_UPDATED = "21 August 2026";
 
 export default function AccessibilityPage() {
   return (
-    <main className="relative mx-auto w-full max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <main className="relative mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <article className="rounded-3xl border border-zinc-200 bg-white p-6 sm:p-10 dark:border-zinc-800 dark:bg-zinc-950">
         <p className="text-xs font-medium uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
           Legal · Accessibility
@@ -194,7 +194,7 @@ export default function AccessibilityPage() {
             ← Cookies Policy
           </Link>
           <Link
-            href="/"
+            href="/#calculator"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-500"
           >
             Open UCAS Calculator

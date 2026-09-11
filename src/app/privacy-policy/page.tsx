@@ -57,7 +57,7 @@ export default function PrivacyPolicyPage() {
   return (
     <article className="bg-zinc-50 text-zinc-800 antialiased dark:bg-zinc-950 dark:text-zinc-200">
       <div className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900/40">
-        <div className="mx-auto w-full max-w-[1000px] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-6 text-sm">
             <ol className="flex items-center gap-2 text-zinc-500 dark:text-zinc-400">
               <li>
@@ -102,7 +102,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-[1000px] px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         <div className="space-y-12">
           <section className="space-y-4">
             <SectionHeading id="controller">

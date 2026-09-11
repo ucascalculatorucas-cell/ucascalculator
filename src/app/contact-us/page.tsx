@@ -37,7 +37,7 @@ export default function ContactPage() {
   return (
     <div className="bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-50">
       <section className="border-b border-zinc-200 bg-gradient-to-b from-white via-indigo-50/40 to-zinc-50 dark:border-zinc-800 dark:from-zinc-950 dark:via-indigo-950/20 dark:to-zinc-950">
-        <div className="mx-auto w-full max-w-[1000px] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white px-3 py-1 text-xs font-semibold text-indigo-700 shadow-sm dark:border-indigo-900/60 dark:bg-zinc-900 dark:text-indigo-300">
               We are here to help
@@ -56,7 +56,7 @@ export default function ContactPage() {
 
       <section
         aria-labelledby="contact-info-heading"
-        className="mx-auto w-full max-w-[1000px] px-4 py-14 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8"
       >
         <div className="flex items-center gap-3">
           <h2
@@ -131,7 +131,7 @@ export default function ContactPage() {
         aria-labelledby="contact-form-heading"
         className="border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950"
       >
-        <div className="mx-auto w-full max-w-[1000px] px-4 py-14 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
             <h2
               id="contact-form-heading"
@@ -153,7 +153,7 @@ export default function ContactPage() {
 
       <section
         aria-labelledby="response-times-heading"
-        className="mx-auto w-full max-w-[1000px] px-4 py-14 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8"
       >
         <div className="flex items-center gap-3">
           <h2

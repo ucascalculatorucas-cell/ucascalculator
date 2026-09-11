@@ -1,30 +1,65 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
+import {
+  IconAccess,
+  IconCalculator,
+  IconTable,
+  IconALevel,
+  IconScottish,
+  IconBTEC,
+  IconIB,
+  IconTLevel,
+} from "@/components/icons";
 
 const DATE_PUBLISHED = "2026-08-19";
 const DATE_MODIFIED = "2026-08-20";
 
 export const metadata: Metadata = {
-  title: "Access to HE & EPQ UCAS Points | 2025/26 Tariff Guide",
+  title:
+    "Access to HE & EPQ UCAS Points | 2025/26 Tariff Guide — Access Diploma D/M/P Combinations + EPQ A* to E",
   description:
-    "Access to HE Diploma D/M/P 45-credit combinations aur EPQ A*-E grade ki official UCAS Tariff points 2025/26. A-Level equivalence, Russell Group EPQ rules, aur mini-FAQ.",
-  alternates: {
-    canonical: "https://ucascalculator.com/access-epq-ucas-points",
-  },
+    "Access to HE Diploma 45-graded-credit D/M/P combinations (45D=144=AAA through 45P=72) and EPQ A* to E grade UCAS Tariff points 2025/26. A-Level equivalence visuals, Russell Group EPQ counting rules, Access to HE unit rules and common gotchas with full FAQ.",
+  keywords: [
+    "access to he ucas points",
+    "access to he diploma ucas points",
+    "access to he 45 distinctions ucas points",
+    "epq ucas points",
+    "epq a star ucas points",
+    "epq a ucas points",
+    "45d ucas points access",
+    "30d 15m access ucas points",
+    "access to he vs a level ucas tariff",
+    "does russell group count epq",
+    "access to he 45 merits ucas points",
+    "epq btec access combined ucas points",
+    "welsh bacc advanced skills challenge certificate ucas points",
+  ],
+  metadataBase: new URL("https://ucascalculator.com"),
+  alternates: { canonical: "/access-epq-ucas-points" },
   openGraph: {
-    title: "Access to HE & EPQ UCAS Points | 2025/26 Tariff Guide",
+    title: "Access to HE & EPQ UCAS Points | 2025/26 D/M/P + A*–E Tariff",
     description:
-      "Access to HE Diploma 45-unit D/M/P combinations aur EPQ A*-E grade ki official UCAS Tariff points. A-Level equivalence aur Russell Group EPQ exclusion rules.",
+      "Access to HE Diploma 45D through 45P combinations, EPQ A* to E grades, Access to HE unit counting rules and Russell Group EPQ exclusion rules — 2025/26 UCAS Tariff.",
     url: "https://ucascalculator.com/access-epq-ucas-points",
     type: "article",
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
+    locale: "en_GB",
+    siteName: "UCASCalculator.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Access to HE & EPQ UCAS Points | 2025/26 Tariff Guide",
+    title: "Access & EPQ UCAS Points 2025/26",
     description:
-      "Access to HE 45D = 144 points (AAA eq). EPQ A* = 28 points. Full 2025/26 official Tariff lookup tables.",
+      "Access 45D = 144 pts, EPQ A* = 28 pts. Full Tariff lookup + counting rules FAQ.",
+  },
+  robots: {
+    index: false,
+    follow: false,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
   },
 };
 
@@ -70,449 +105,510 @@ const faqs = [
 export default function AccessEpqGuidePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "WebPage",
-                "@id": "https://ucascalculator.com/access-epq-ucas-points#webpage",
-                url: "https://ucascalculator.com/access-epq-ucas-points",
-                name: "Access to HE & EPQ UCAS Points | 2025/26 Tariff Guide",
-                isPartOf: {
-                  "@id": "https://ucascalculator.com/#website",
-                },
-                datePublished: DATE_PUBLISHED,
-                dateModified: DATE_MODIFIED,
-                inLanguage: "en-GB",
-                about: [
-                  {
-                    "@type": "Thing",
-                    name: "Access to Higher Education Diploma",
-                  },
-                  {
-                    "@type": "Thing",
-                    name: "EPQ (Extended Project Qualification)",
-                  },
-                ],
-              },
-              {
-                "@type": "BreadcrumbList",
-                "@id": "https://ucascalculator.com/access-epq-ucas-points#breadcrumb",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Home",
-                    item: "https://ucascalculator.com",
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "UCAS Tariff Points Calculator",
-                    item: "https://ucascalculator.com/",
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: "Access to HE & EPQ UCAS Points",
-                    item: "https://ucascalculator.com/access-epq-ucas-points",
-                  },
-                ],
-              },
-              {
-                "@type": "FAQPage",
-                "@id": "https://ucascalculator.com/access-epq-ucas-points#faq",
-                mainEntity: faqs.map((f) => ({
-                  "@type": "Question",
-                  name: f.q,
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: f.a,
-                  },
-                })),
-              },
-            ],
-          }),
-        }}
-      />
-      <section className="pt-10 pb-6 md:pt-14 md:pb-10">
-        <div className="mx-auto max-w-[1000px] px-5">
-          <div className="mb-8 text-center">
-            <div className="inline-flex items-center gap-2 mb-5 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-medium text-slate-700 shadow-sm">
-              <span className="h-2 w-2 rounded-full bg-amber-500" />
-              Combined Guide
-            </div>
-            <h1 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
-              Access to HE &amp; EPQ UCAS Points
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 md:text-lg">
-              Official 2025/26 UCAS Tariff values for Access to HE Diploma
-              D/M/P credit combinations and EPQ A*–E grades with A-Level
-              equivalence and university counting rules.
-            </p>
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
-              >
-                Calculate your total now
-              </Link>
-              <Link
-                href="/ucas-tariff-points-table"
-                className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-              >
-                Open full Tariff table
-              </Link>
-            </div>
-          </div>
+      <Script id="webpage-schema-aepq" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Access to HE & EPQ UCAS Points 2025/26",
+          description:
+            "Access to HE Diploma 45 graded credit D/M/P combinations (45D through 45P) Access Tariff values. Also covers EPQ A* through E grade UCAS Tariff values, Welsh Bacc Advanced Skills Challenge Certificate, Access counting rules and Russell Group EPQ exclusion rules for the 2025/26 and 2026 UK university entry cycles.",
+          url: "https://ucascalculator.com/access-epq-ucas-points",
+          datePublished: DATE_PUBLISHED,
+          dateModified: DATE_MODIFIED,
+          inLanguage: "en-GB",
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": "https://ucascalculator.com/access-epq-ucas-points",
+          },
+          about: [
+            { "@type": "Thing", "name": "Access to Higher Education Diploma" },
+            { "@type": "Thing", "name": "Extended Project Qualification (EPQ)" },
+            { "@type": "Thing", "name": "Welsh Baccalaureate Advanced Skills Challenge Certificate" },
+            { "@type": "Thing", "name": "Access to HE Northern Ireland separate scale" },
+          ],
+        })}
+      </Script>
+      <Script id="breadcrumb-schema-aepq" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: "https://ucascalculator.com/",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "UCAS Tariff Points Calculator",
+              item: "https://ucascalculator.com/",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Access to HE & EPQ UCAS Points",
+              item: "https://ucascalculator.com/access-epq-ucas-points",
+            },
+          ],
+        })}
+      </Script>
+      <Script id="faq-schema-aepq" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        })}
+      </Script>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-7 mb-10 shadow-sm">
-            <p className="text-base leading-relaxed text-slate-700">
-              <strong>Access to HE Diploma</strong> UCAS Tariff points are
-              calculated from the 45 graded Level 3 credit units at
-              Distinction, Merit, or Pass — 45 Distinctions earns 144 points
-              (AAA equivalent), making Access a fully recognised pathway into
+      <article className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <header className="mb-10 border-b border-zinc-200 pb-8 dark:border-zinc-800">
+          <div className="flex items-center gap-3 text-violet-600 dark:text-violet-400" aria-hidden>
+            <IconAccess size={32} />
+            <p className="text-xs font-semibold uppercase tracking-wider">
+              Access &amp; EPQ Guide — 2025/26 Tariff
+            </p>
+          </div>
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl dark:text-zinc-50">
+            Access to HE &amp; EPQ UCAS Points
+          </h1>
+          <p className="mt-4 text-base leading-7 text-zinc-600 dark:text-zinc-300">
+            Official 2017-reform UCAS Tariff values for Access to HE Diploma 45-credit D/M/P
+            combinations and the Extended Project Qualification A* to E grades used in the 2025 and 2026
+            application cycles. Exact grade-by-grade lookup, visual A-Level equivalence chart across
+            BTEC and IB, Access-only unit counting rules and the Russell Group EPQ exclusion
+            rule most EPQ applicants get wrong.
+          </p>
+          <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+            <strong>Short answer:</strong> Access to HE 45 Distinctions = 144 UCAS points (exact AAA
+            A-Level equivalent). Access 45 Merits = 108 points, Access 45 Passes = 72 points. EPQ A*
+            = 28 points (the highest AS-sized Level 3 value on the scale); EPQ A = 24 points,
+            same value as an AS-Level A. Northern Ireland Access diplomas use a separate scale not
+            listed here. Welsh Bacc Advanced Skills Challenge Certificate shares the EPQ 6-grade scale
+            (A* through E = 28 to 8 points exactly).
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/#calculator"
+              className="inline-flex h-11 items-center gap-2 rounded-xl bg-indigo-600 px-5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
+            >
+              <IconCalculator size={18} /> Calculate your total now
+            </Link>
+            <Link
+              href="/ucas-tariff-points-table"
+              className="inline-flex h-11 items-center gap-2 rounded-xl border border-zinc-300 bg-white px-5 text-sm font-semibold text-zinc-900 shadow-sm hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:hover:bg-zinc-800"
+            >
+              <IconTable size={18} /> Open full Tariff table
+            </Link>
+          </div>
+        </header>
+
+        <div className="space-y-12 sm:space-y-16">
+          <div className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-7 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+            <p className="text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <strong>Access to HE Diploma</strong> UCAS Tariff points are calculated from the 45
+              graded Level 3 credit units at Distinction, Merit, or Pass — 45 Distinctions
+              earns 144 points (AAA equivalent), making Access a fully recognised pathway into
               UK undergraduate degrees for mature and non-A-Level students.
             </p>
-            <p className="text-base leading-relaxed text-slate-700 mt-3">
-              The <strong>Extended Project Qualification (EPQ)</strong> is a
-              standalone Level 3 research project worth up to 28 Tariff points
-              at A*. Most universities award EPQ points, but many Russell
-              Group STEM courses exclude them from formally meeting a
+            <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              The <strong>Extended Project Qualification (EPQ)</strong> is a standalone Level 3
+              research project worth up to 28 Tariff points at A*. Most universities award EPQ
+              points, but many Russell Group STEM courses exclude them from formally meeting a
               headline offer grade even though they appear in your total.
             </p>
           </div>
 
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-5">
-            Access to HE Diploma UCAS Tariff Points Table
-          </h2>
-          <p className="text-slate-600 mb-4 text-base leading-relaxed">
-            How Do Access to HE Credit Combinations Convert to UCAS Points?
-            Every Access Diploma uses exactly 45 graded credit units; the
-            table below covers all eight recognised D/M/P combinations
-            published in the 2025/26 UCAS Tariff.
-          </p>
-          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm mb-10">
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-left text-sm">
-                <caption className="sr-only">
-                  Access to HE Diploma 45-unit D/M/P combinations and UCAS
-                  Tariff points 2025/26
-                </caption>
-                <thead className="bg-slate-50 text-slate-900">
-                  <tr>
-                    <th className="px-4 py-3 font-semibold border-b border-slate-200">
-                      Credit Combination
-                    </th>
-                    <th className="px-4 py-3 font-semibold border-b border-slate-200">
-                      Shorthand
-                    </th>
-                    <th className="px-4 py-3 font-semibold border-b border-slate-200 text-right">
-                      UCAS Points
-                    </th>
-                    <th className="px-4 py-3 font-semibold border-b border-slate-200">
-                      A-Level Equivalent
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {accessRows.map((row, i) => (
-                    <tr
-                      key={row.short}
-                      className={
-                        i % 2 === 0 ? "bg-white" : "bg-slate-50/60"
-                      }
-                    >
-                      <td className="px-4 py-3 border-b border-slate-100 font-medium text-slate-900 whitespace-nowrap">
-                        {row.combo}
-                      </td>
-                      <td className="px-4 py-3 border-b border-slate-100 text-slate-600 font-mono text-xs">
-                        {row.short}
-                      </td>
-                      <td className="px-4 py-3 border-b border-slate-100 text-right">
-                        <span className="inline-block min-w-[3ch] font-bold text-slate-900 text-base tabular-nums">
-                          {row.points}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 border-b border-slate-100 text-slate-700 whitespace-nowrap">
-                        {row.alevel}
-                      </td>
+          <section id="access-table" aria-labelledby="access-table-heading">
+            <h2
+              id="access-table-heading"
+              className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+            >
+              Access to HE Diploma UCAS Tariff Points Table
+            </h2>
+            <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              How Do Access to HE Credit Combinations Convert to UCAS Points? Every Access
+              Diploma uses exactly 45 graded credit units; the table below covers all eight
+              recognised D/M/P combinations published in the 2025/26 UCAS Tariff.
+            </p>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+              <div className="overflow-x-auto">
+                <table className="min-w-full border-collapse text-sm">
+                  <caption className="sr-only">
+                    Access to HE Diploma 45-unit D/M/P combinations and UCAS Tariff points 2025/26
+                  </caption>
+                  <thead className="bg-zinc-100 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50">
+                    <tr>
+                      <th scope="col" className="px-5 py-3 text-left font-semibold">
+                        Credit Combination
+                      </th>
+                      <th scope="col" className="px-5 py-3 text-left font-semibold">
+                        Shorthand
+                      </th>
+                      <th scope="col" className="px-5 py-3 text-right font-semibold">
+                        UCAS Points
+                      </th>
+                      <th scope="col" className="px-5 py-3 text-left font-semibold">
+                        A-Level Equivalent
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
+                    {accessRows.map((row) => (
+                      <tr key={row.short} className="text-zinc-800 dark:text-zinc-100">
+                        <td className="px-5 py-3 font-medium whitespace-nowrap text-zinc-900 dark:text-zinc-50">
+                          {row.combo}
+                        </td>
+                        <td className="px-5 py-3">
+                          <code className="rounded-md bg-zinc-100 px-2 py-1 text-xs font-semibold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-200">
+                            {row.short}
+                          </code>
+                        </td>
+                        <td className="px-5 py-3 text-right tabular-nums">
+                          <span className="inline-flex rounded-md bg-violet-50 px-2 py-1 font-semibold text-violet-700 dark:bg-violet-500/10 dark:text-violet-300">
+                            {row.points}
+                          </span>
+                        </td>
+                        <td className="px-5 py-3 whitespace-nowrap text-zinc-700 dark:text-zinc-200">
+                          {row.alevel}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
+          </section>
 
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-5">
-            EPQ UCAS Tariff Points Table (A* to E)
-          </h2>
-          <p className="text-slate-600 mb-4 text-base leading-relaxed">
-            What Is a Distinction or A* Worth in EPQ UCAS Points? The EPQ
-            uses a six-grade A* to E scale identical in size to an AS Level,
-            with A* EPQ actually worth 4 points more than an AS A (28 vs 24).
-          </p>
-          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm mb-10">
-            <div className="overflow-x-auto">
-              <table className="min-w-full border-collapse text-left text-sm">
-                <caption className="sr-only">
-                  EPQ A* to E grades and UCAS Tariff points 2025/26
-                </caption>
-                <thead className="bg-slate-50 text-slate-900">
-                  <tr>
-                    <th className="px-4 py-3 font-semibold border-b border-slate-200">
-                      EPQ Grade
-                    </th>
-                    <th className="px-4 py-3 font-semibold border-b border-slate-200 text-right">
-                      UCAS Points
-                    </th>
-                    <th className="px-4 py-3 font-semibold border-b border-slate-200">
-                      A-Level / AS Equivalent
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {epqRows.map((row, i) => (
-                    <tr
-                      key={row.grade}
-                      className={
-                        i % 2 === 0 ? "bg-white" : "bg-slate-50/60"
-                      }
-                    >
-                      <td className="px-4 py-3 border-b border-slate-100">
-                        <span className="inline-flex h-8 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-orange-500 text-sm font-black text-white shadow-sm">
-                          {row.grade}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 border-b border-slate-100 text-right">
-                        <span className="inline-block min-w-[3ch] font-bold text-slate-900 text-base tabular-nums">
-                          {row.points}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 border-b border-slate-100 text-slate-700 whitespace-nowrap">
-                        {row.alevel}
-                      </td>
+          <section id="epq-table" aria-labelledby="epq-table-heading">
+            <h2
+              id="epq-table-heading"
+              className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+            >
+              EPQ UCAS Tariff Points Table (A* to E)
+            </h2>
+            <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              What Is a Distinction or A* Worth in EPQ UCAS Points? The EPQ uses a six-grade
+              A* to E scale identical in size to an AS Level, with A* EPQ actually worth 4 points
+              more than an AS A (28 vs 24). Welsh Bacc Advanced Skills Challenge Certificate uses
+              the exact same 28-to-8 point scale.
+            </p>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+              <div className="overflow-x-auto">
+                <table className="min-w-full border-collapse text-sm">
+                  <caption className="sr-only">
+                    EPQ A* to E grades and UCAS Tariff points 2025/26
+                  </caption>
+                  <thead className="bg-zinc-100 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50">
+                    <tr>
+                      <th scope="col" className="px-5 py-3 text-left font-semibold">
+                        EPQ Grade
+                      </th>
+                      <th scope="col" className="px-5 py-3 text-right font-semibold">
+                        UCAS Points
+                      </th>
+                      <th scope="col" className="px-5 py-3 text-left font-semibold">
+                        A-Level / AS Equivalent
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-5">
-            Access to HE &amp; EPQ vs A-Level Equivalence
-          </h2>
-          <p className="text-slate-600 mb-6 text-base leading-relaxed">
-            How Do Access to HE and EPQ Points Compare to A-Level Grades?
-            Access 45D matches AAA at the top, while EPQ sits between AS and
-            full A-Level in per-grade size.
-          </p>
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-7 mb-10 shadow-sm space-y-5">
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-slate-900">
-                  Access 45D — 144 pts
-                </span>
-                <span className="text-xs font-medium text-slate-500">
-                  = A-Level AAA
-                </span>
-              </div>
-              <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-amber-500 to-orange-500"
-                  style={{ width: `${(144 / 168) * 100}%` }}
-                />
+                  </thead>
+                  <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
+                    {epqRows.map((row) => (
+                      <tr key={row.grade} className="text-zinc-800 dark:text-zinc-100">
+                        <td className="px-5 py-3">
+                          <span className="inline-flex h-9 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 text-sm font-black text-white shadow-sm">
+                            {row.grade}
+                          </span>
+                        </td>
+                        <td className="px-5 py-3 text-right tabular-nums">
+                          <span className="inline-flex rounded-md bg-indigo-50 px-2 py-1 font-semibold text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">
+                            {row.points}
+                          </span>
+                        </td>
+                        <td className="px-5 py-3 whitespace-nowrap text-zinc-700 dark:text-zinc-200">
+                          {row.alevel}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-slate-900">
-                  Access 30D15M — 136 pts
-                </span>
-                <span className="text-xs font-medium text-slate-500">
-                  = A-Level AAB
-                </span>
+          </section>
+          <section id="equiv" aria-labelledby="equiv-heading">
+            <h2
+              id="equiv-heading"
+              className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+            >
+              Access to HE &amp; EPQ vs A-Level Equivalence
+            </h2>
+            <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              How Do Access to HE and EPQ Points Compare to A-Level Grades? Access 45D matches
+              AAA at the top, while EPQ sits between AS and full A-Level in per-grade size.
+              Reference max at right = A*A*A* at three A-Levels / BTEC Extended D*D*D* =
+              168 points.
+            </p>
+            <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5 sm:p-7 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 space-y-5">
+              <div>
+                <div className="mb-2 flex items-center justify-between text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  <span>Access 45D — 144 pts</span>
+                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">= A-Level AAA</span>
+                </div>
+                <div className="h-2.5 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-600"
+                    style={{ width: `${(144 / 168) * 100}%` }}
+                  />
+                </div>
               </div>
-              <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-amber-500 to-orange-500/70"
-                  style={{ width: `${(136 / 168) * 100}%` }}
-                />
+              <div>
+                <div className="mb-2 flex items-center justify-between text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  <span>Access 30D 15M — 136 pts</span>
+                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">= A-Level AAB</span>
+                </div>
+                <div className="h-2.5 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-violet-500 to-purple-500"
+                    style={{ width: `${(136 / 168) * 100}%` }}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="mb-2 flex items-center justify-between text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  <span>Access 24D 21M — 130 pts</span>
+                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">= A-Level ABB–</span>
+                </div>
+                <div className="h-2.5 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-violet-400 to-purple-500"
+                    style={{ width: `${(130 / 168) * 100}%` }}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="mb-2 flex items-center justify-between text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  <span>Access 15D 30M — 122 pts</span>
+                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">= BBB+</span>
+                </div>
+                <div className="h-2.5 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-violet-400 to-fuchsia-400"
+                    style={{ width: `${(122 / 168) * 100}%` }}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="mb-2 flex items-center justify-between text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  <span>Access 45M — 108 pts</span>
+                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">= BCC–</span>
+                </div>
+                <div className="h-2.5 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-violet-400 to-purple-400"
+                    style={{ width: `${(108 / 168) * 100}%` }}
+                  />
+                </div>
+              </div>
+              <div className="border-t border-zinc-100 pt-5 dark:border-zinc-800">
+                <div className="mb-2 flex items-center justify-between text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  <span>Access 45P — 72 pts</span>
+                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">= DDD (foundation)</span>
+                </div>
+                <div className="h-2.5 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-violet-300 to-fuchsia-300"
+                    style={{ width: `${(72 / 168) * 100}%` }}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="mb-2 flex items-center justify-between text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  <span>EPQ A* — 28 pts</span>
+                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">AS A + bonus</span>
+                </div>
+                <div className="h-2.5 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500"
+                    style={{ width: `${(28 / 168) * 100}%` }}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="mb-2 flex items-center justify-between text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                  <span>EPQ A — 24 pts</span>
+                  <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">= AS A exactly</span>
+                </div>
+                <div className="h-2.5 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-indigo-400 to-violet-400"
+                    style={{ width: `${(24 / 168) * 100}%` }}
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="mb-2 flex items-center justify-between text-sm font-semibold text-zinc-500 dark:text-zinc-400">
+                  <span>A*A*A* (3×A-Level reference) — 168 pts</span>
+                </div>
+                <div className="h-2.5 overflow-hidden rounded-full bg-zinc-100 dark:bg-zinc-800">
+                  <div className="h-full w-full rounded-full bg-zinc-400 opacity-50" />
+                </div>
               </div>
             </div>
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-slate-900">
-                  Access 45M — 108 pts
-                </span>
-                <span className="text-xs font-medium text-slate-500">
-                  = BBC-
-                </span>
-              </div>
-              <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-amber-400 to-orange-400"
-                  style={{ width: `${(108 / 168) * 100}%` }}
-                />
-              </div>
-            </div>
-            <div className="border-t border-slate-100 pt-5">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-slate-900">
-                  EPQ A* — 28 pts
-                </span>
-                <span className="text-xs font-medium text-slate-500">
-                  AS A+ bonus
-                </span>
-              </div>
-              <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-sky-500 to-indigo-500"
-                  style={{ width: `${(28 / 168) * 100}%` }}
-                />
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-slate-900">
-                  EPQ A — 24 pts
-                </span>
-                <span className="text-xs font-medium text-slate-500">
-                  = AS A
-                </span>
-              </div>
-              <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full bg-gradient-to-r from-sky-400 to-indigo-400"
-                  style={{ width: `${(24 / 168) * 100}%` }}
-                />
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-slate-500">
-                  A-Level A*A*A* (max 3 A-Levels) — 168 pts reference
-                </span>
-              </div>
-              <div className="h-3 overflow-hidden rounded-full bg-slate-100">
-                <div
-                  className="h-full rounded-full bg-slate-300"
-                  style={{ width: "100%" }}
-                />
-              </div>
-            </div>
-          </div>
-
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-5">
-            Qualification-Specific Rules &amp; Gotchas
-          </h2>
-          <div className="grid md:grid-cols-2 gap-5 mb-10">
-            <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">
-                Access to HE: Only the 45 graded units count
-              </h3>
-              <p className="text-sm leading-relaxed text-slate-700">
-                Access Diplomas are typically 60 credits total, but UCAS
-                only tariffs the 45 Level 3 graded units (Distinction /
-                Merit / Pass). The remaining 15 credits are ungraded Skills
-                for Learning or project units — these never add Tariff
-                points, even if completed at high standard. Northern
-                Ireland Access Diplomas use a separate scale not listed
-                here.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-amber-200 bg-amber-50/50 p-5 md:p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-900 mb-3">
-                EPQ: Russell Group / high-tariff STEM exclusion
-              </h3>
-              <p className="text-sm leading-relaxed text-slate-700">
-                EPQ and Welsh Baccalaureate Advanced Skills Challenge
-                Certificate both appear on your UCAS Tariff total, but the
-                majority of Russell Group and high-tariff STEM courses
-                explicitly write them out of a formal offer — meaning your
-                three A-Levels (or IB / BTEC equivalent) must hit the
-                grade on their own. Humanities, social science, and arts
-                courses are far more likely to accept EPQ points towards
-                meeting an offer.
-              </p>
-            </div>
-          </div>
-
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-5">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-3 mb-12">
-            {faqs.map((f, i) => (
-              <details
-                key={i}
-                className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm open:shadow-md open:border-slate-300"
-              >
-                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-semibold text-slate-900 text-base">
-                  <span>{f.q}</span>
-                  <span className="mt-1 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-slate-100 text-slate-500 text-lg group-open:rotate-45 transition-transform">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-3 text-sm leading-relaxed text-slate-700">
-                  {f.a}
+          </section>
+          <section id="rules" aria-labelledby="rules-heading">
+            <h2
+              id="rules-heading"
+              className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+            >
+              Qualification-Specific Rules &amp; Gotchas
+            </h2>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-5">
+              <div className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+                <h3 className="text-lg font-bold tracking-tight text-zinc-900 mb-3 dark:text-zinc-50">
+                  Access to HE: Only the 45 graded units count
+                </h3>
+                <p className="text-sm leading-7 text-zinc-700 dark:text-zinc-300">
+                  Access Diplomas are typically 60 credits total, but UCAS only tariffs the 45
+                  Level 3 graded units (Distinction / Merit / Pass). The remaining 15 credits
+                  are ungraded Skills for Learning or project units — these never add Tariff
+                  points, even if completed at high standard. Northern Ireland Access Diplomas
+                  use a completely separate scale published by UCAS and are not listed here.
                 </p>
-              </details>
-            ))}
-          </div>
+              </div>
+              <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6 shadow-sm dark:border-amber-900/40 dark:bg-amber-950/40">
+                <h3 className="text-lg font-bold tracking-tight text-zinc-900 mb-3 dark:text-zinc-50">
+                  EPQ: Russell Group / high-tariff STEM exclusion
+                </h3>
+                <p className="text-sm leading-7 text-zinc-700 dark:text-zinc-200">
+                  EPQ and Welsh Baccalaureate Advanced Skills Challenge Certificate both appear
+                  on your UCAS Tariff total, but the majority of Russell Group and high-tariff
+                  STEM courses explicitly write them out of a formal offer — meaning your three
+                  A-Levels (or IB / BTEC equivalent) must hit the grade on their own. Humanities,
+                  social science, and arts courses are far more likely to accept EPQ points
+                  towards meeting an offer.
+                </p>
+              </div>
+            </div>
+          </section>
 
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-5">
-            More UCAS Tariff Guides
-          </h2>
-          <div className="grid md:grid-cols-3 gap-4 mb-6">
-            <Link
-              href="/a-level-ucas-points"
-              className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition"
+          <section id="faq" aria-labelledby="faq-heading">
+            <h2
+              id="faq-heading"
+              className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
             >
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-500 mb-4 flex items-center justify-center text-xs font-black text-white">
-                AL
-              </div>
-              <h3 className="font-bold text-slate-900 mb-1">
-                A-Level UCAS Points
-              </h3>
-              <p className="text-sm text-slate-600">
-                A*–E + AS A–E official tariff with reform rules.
-              </p>
-            </Link>
-            <Link
-              href="/scottish-highers-ucas-points"
-              className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition"
+              Frequently Asked Questions
+            </h2>
+            <div className="mt-6 divide-y divide-zinc-200 overflow-hidden rounded-2xl border border-zinc-200 bg-white dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900">
+              {faqs.map((f, i) => (
+                <details key={i} className="group px-5 py-4" open={i === 0}>
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left">
+                    <span className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">{f.q}</span>
+                    <span
+                      aria-hidden
+                      className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-500 transition-transform group-open:rotate-45 dark:bg-zinc-800 dark:text-zinc-300"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-3 text-sm leading-7 text-zinc-600 dark:text-zinc-300">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <section
+            id="crosslinks"
+            aria-labelledby="xl-heading"
+            className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6 sm:p-8 dark:border-zinc-800 dark:bg-zinc-900/60"
+          >
+            <h2
+              id="xl-heading"
+              className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl dark:text-zinc-50"
             >
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 mb-4 flex items-center justify-center text-xs font-black text-white">
-                SC
-              </div>
-              <h3 className="font-bold text-slate-900 mb-1">
-                Scottish Highers UCAS Points
-              </h3>
-              <p className="text-sm text-slate-600">
-                Band-1 / Band-2 split for Higher and Advanced Higher.
-              </p>
-            </Link>
-            <Link
-              href="/btec-ucas-points"
-              className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition"
-            >
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 mb-4 flex items-center justify-center text-xs font-black text-white">
-                BT
-              </div>
-              <h3 className="font-bold text-slate-900 mb-1">
-                BTEC UCAS Points
-              </h3>
-              <p className="text-sm text-slate-600">
-                Extended, Diploma, Subsidiary &amp; Certificate 2025/26
-                tariff.
-              </p>
-            </Link>
-          </div>
+              More UCAS Tariff Guides
+            </h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-3">
+              <Link
+                href="/a-level-ucas-points"
+                className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                <IconALevel size={24} className="text-indigo-600 dark:text-indigo-400" />
+                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-indigo-600 dark:text-zinc-50 dark:group-hover:text-indigo-400">
+                  A-Level UCAS Points
+                </h3>
+                <p className="mt-1 text-xs leading-6 text-zinc-600 dark:text-zinc-400">
+                  A*–E + AS A–E official tariff with reform rules.
+                </p>
+              </Link>
+              <Link
+                href="/scottish-highers-ucas-points"
+                className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                <IconScottish size={24} className="text-amber-600 dark:text-amber-400" />
+                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-amber-600 dark:text-zinc-50 dark:group-hover:text-amber-400">
+                  Scottish Highers UCAS Points
+                </h3>
+                <p className="mt-1 text-xs leading-6 text-zinc-600 dark:text-zinc-400">
+                  Band-1 / Band-2 split for Higher and Advanced Higher.
+                </p>
+              </Link>
+              <Link
+                href="/btec-ucas-points"
+                className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                <IconBTEC size={24} className="text-fuchsia-600 dark:text-fuchsia-400" />
+                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-fuchsia-600 dark:text-zinc-50 dark:group-hover:text-fuchsia-400">
+                  BTEC UCAS Points
+                </h3>
+                <p className="mt-1 text-xs leading-6 text-zinc-600 dark:text-zinc-400">
+                  Extended, Diploma, Subsidiary &amp; Certificate 2025/26 tariff.
+                </p>
+              </Link>
+              <Link
+                href="/ib-ucas-points"
+                className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                <IconIB size={24} className="text-emerald-600 dark:text-emerald-400" />
+                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-emerald-600 dark:text-zinc-50 dark:group-hover:text-emerald-400">
+                  IB UCAS Points
+                </h3>
+                <p className="mt-1 text-xs leading-6 text-zinc-600 dark:text-zinc-400">
+                  HL / SL grade-by-grade + EE-TOK core bonus matrix.
+                </p>
+              </Link>
+              <Link
+                href="/t-level-ucas-points"
+                className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                <IconTLevel size={24} className="text-rose-600 dark:text-rose-400" />
+                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-rose-600 dark:text-zinc-50 dark:group-hover:text-rose-400">
+                  T-Level UCAS Points
+                </h3>
+                <p className="mt-1 text-xs leading-6 text-zinc-600 dark:text-zinc-400">
+                  D* → Near Pass full table + Core component partial scale.
+                </p>
+              </Link>
+              <Link
+                href="/ucas-tariff-points-table"
+                className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                <IconTable size={24} className="text-violet-600 dark:text-violet-400" />
+                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-violet-600 dark:text-zinc-50 dark:group-hover:text-violet-400">
+                  Full Tariff Table
+                </h3>
+                <p className="mt-1 text-xs leading-6 text-zinc-600 dark:text-zinc-400">
+                  Search, filter, sort 47 qualifications in one unified table.
+                </p>
+              </Link>
+            </div>
+          </section>
         </div>
-      </section>
+      </article>
     </>
   );
 }

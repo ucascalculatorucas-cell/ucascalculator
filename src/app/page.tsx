@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import UcasCalculator from "@/components/UcasCalculator";
@@ -244,17 +244,17 @@ export default function Home() {
               <path d="M40 78 L60 98 L120 56" stroke="url(#gradB)" strokeWidth="14" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <div className="relative mx-auto w-full max-w-6xl px-4 pb-10 pt-10 sm:px-6 sm:pt-12 lg:px-8 lg:pb-16">
+          <div className="relative mx-auto w-full max-w-6xl px-4 pb-8 pt-8 sm:px-6 sm:pb-10 sm:pt-10 lg:px-8 lg:pb-16 lg:pt-12">
             <div className="flex flex-col items-center text-center">
-              <h1 className="mt-2 max-w-[1000px] text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl dark:text-zinc-50">
+              <h1 className="mt-1.5 max-w-[1000px] text-3xl font-bold leading-[1.1] tracking-tight sm:mt-2 sm:text-4xl md:text-5xl lg:text-6xl dark:text-zinc-50">
                 UCAS Tariff Points Calculator
               </h1>
-              <p className="mt-3 max-w-xl text-base leading-relaxed text-zinc-600 sm:text-lg dark:text-zinc-300">
+              <p className="mt-2.5 max-w-xl text-sm leading-relaxed text-zinc-600 sm:mt-3 sm:text-base md:text-lg dark:text-zinc-300">
                 Instant UCAS points converter for A-Levels, BTEC, IB, Scottish Highers, T-Levels, Access &amp; EPQ — official 2017 reform Tariff values for 2025/26.
               </p>
             </div>
 
-            <div className="mx-auto mt-8 w-full">
+            <div className="mx-auto mt-6 w-full sm:mt-8">
             <div id="calculator" aria-label="UCAS Tariff Points Calculator widget">
               <UcasCalculator />
             </div>
@@ -262,18 +262,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ============ ARTICLE / CONTENT CONTAINER (max-w-[1000px] same as calc page) ============ */}
-        <article className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-          <div className="space-y-16">
-            {/* A. WHAT IS UCAS TARIFF — TOPICAL CLUSTER 1 */}
+        {/* ============ ARTICLE / CONTENT CONTAINER ============ */}
+        <article className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+          <div className="space-y-12 sm:space-y-16">
+            {/* A. WHAT IS UCAS TARIFF */}
             <section id="about-tool" aria-labelledby="about-heading">
               <h2
                 id="about-heading"
-                className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+                className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl dark:text-zinc-50"
               >
                 What Are UCAS Tariff Points?
               </h2>
-              <p className="mt-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-3 text-sm leading-7 text-zinc-700 sm:mt-4 sm:text-base dark:text-zinc-300">
                 UCAS Tariff points are the standardised numerical scale used by every UK
                 university admissions team to compare Level 3 and Level 4 qualifications from
                 different awarding bodies on a single, consistent score. Because applicants
@@ -285,7 +285,7 @@ export default function Home() {
                 came from an A-Level A*, a BTEC D*, an IB HL grade 7 or a Scottish Advanced
                 Higher A Band-1.
               </p>
-              <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-2.5 text-sm leading-7 text-zinc-700 sm:mt-3 sm:text-base dark:text-zinc-300">
                 The live calculator above computes your running Tariff total by summing each
                 individual grade&apos;s value from the official UCAS 2025/2026 lookup table. The
                 dedicated
@@ -308,11 +308,11 @@ export default function Home() {
               </p>
               <h3
                 id="tariff-scale-2017-reform"
-                className="mt-8 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50"
+                className="mt-6 text-lg font-bold tracking-tight text-zinc-900 sm:mt-8 sm:text-xl dark:text-zinc-50"
               >
                 The 2017 UCAS Tariff Reform Scale
               </h3>
-              <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-2.5 text-sm leading-7 text-zinc-700 sm:mt-3 sm:text-base dark:text-zinc-300">
                 Every figure on UCASCalculator.com follows the 2017 compressed reform Tariff
                 scale introduced by UCAS for 2017 entry onwards. In that reform the previous
                 scale (where an A-Level A* was worth 140 points and AAA equalled 360 points)
@@ -326,11 +326,11 @@ export default function Home() {
               </p>
               <h3
                 id="what-qualifications-count-towards-tariff"
-                className="mt-8 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50"
+                className="mt-6 text-lg font-bold tracking-tight text-zinc-900 sm:mt-8 sm:text-xl dark:text-zinc-50"
               >
                 Which Qualifications Count Towards the UCAS Tariff?
               </h3>
-              <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-2.5 text-sm leading-7 text-zinc-700 sm:mt-3 sm:text-base dark:text-zinc-300">
                 Any UK or international qualification that UCAS has formally tariffed can
                 contribute points, provided the applicant holds it before enrolment. For the
                 vast majority of Year 12, Year 13, Scottish S5/S6 and mature Access applicants
@@ -356,11 +356,11 @@ export default function Home() {
               />
               <h2
                 id="calc-heading"
-                className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+                className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl dark:text-zinc-50"
               >
                 How to Calculate UCAS Tariff Points Step by Step
               </h2>
-              <p className="mt-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-3 text-sm leading-7 text-zinc-700 sm:mt-4 sm:text-base dark:text-zinc-300">
                 Calculating UCAS points manually is straightforward once you work through the
                 five steps systematically. The interactive calculator above executes all five
                 steps automatically on every click, but understanding the underlying logic is
@@ -369,7 +369,7 @@ export default function Home() {
               </p>
               <ol
                 role="list"
-                className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5"
+                className="mt-6 grid grid-cols-1 gap-3 sm:mt-8 sm:gap-5 sm:grid-cols-2 lg:grid-cols-5"
               >
                 {[
                   {
@@ -397,15 +397,18 @@ export default function Home() {
                     title: "Check course rules",
                     body: "Cross-check against university rules (EPQ exclusions, AS restrictions).",
                   },
-                ].map((s) => (
+                ].map((s, i) => (
                   <li
                     key={s.title}
-                    className="relative rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+                    className="relative rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm sm:p-5 dark:border-zinc-800 dark:bg-zinc-900"
                   >
-                    <div className="text-indigo-600 dark:text-indigo-400" aria-hidden>
-                      <s.Icon size={30} />
+                    <div className="absolute -top-3 -left-2 flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 text-[12px] font-bold text-white shadow-md ring-2 ring-white dark:ring-zinc-950">
+                      {i + 1}
                     </div>
-                    <h3 className="mt-3 text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                    <div className="text-indigo-600 dark:text-indigo-400" aria-hidden>
+                      <s.Icon size={28} />
+                    </div>
+                    <h3 className="mt-2.5 text-sm font-semibold text-zinc-900 sm:mt-3 dark:text-zinc-50">
                       {s.title}
                     </h3>
                     <p className="mt-1 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
@@ -416,11 +419,11 @@ export default function Home() {
               </ol>
               <h3
                 id="common-tariff-counting-rules"
-                className="mt-10 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50"
+                className="mt-8 text-lg font-bold tracking-tight text-zinc-900 sm:mt-10 sm:text-xl dark:text-zinc-50"
               >
                 Important UCAS Tariff Counting Rules Applicants Often Miss
               </h3>
-              <ul role="list" className="mt-4 space-y-3 pl-6 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <ul role="list" className="mt-3 space-y-2.5 pl-5 text-sm leading-7 text-zinc-700 sm:mt-4 sm:space-y-3 sm:pl-6 sm:text-base dark:text-zinc-300">
                 <li className="relative">
                   <span
                     aria-hidden
@@ -463,11 +466,11 @@ export default function Home() {
             <section id="qualifications" aria-labelledby="quals-heading">
               <h2
                 id="quals-heading"
-                className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+                className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl dark:text-zinc-50"
               >
                 UCAS Tariff Points by Qualification Pathway
               </h2>
-              <p className="mt-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-3 text-sm leading-7 text-zinc-700 sm:mt-4 sm:text-base dark:text-zinc-300">
                 Below is an at-a-glance breakdown of the six most common UK Level 3 qualification
                 pathways our calculator supports, with A-Level equivalence context, key grade
                 landmarks and links to the dedicated qualification-level guide. Between them
@@ -475,7 +478,7 @@ export default function Home() {
                 applicants each cycle.
               </p>
 
-              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-6 grid gap-3 sm:mt-8 sm:gap-5 lg:gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {[
                   {
                     Key: "a-level",
@@ -558,7 +561,7 @@ export default function Home() {
                 ].map((c) => (
                   <div
                     key={c.title}
-                    className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+                    className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-5 lg:p-6 dark:border-zinc-800 dark:bg-zinc-900"
                   >
                     <div
                       aria-hidden
@@ -577,14 +580,15 @@ export default function Home() {
                       }`}
                     />
                     <div className={`${c.tint} mt-1`} aria-hidden>
-                      <c.Icon size={28} />
+                      <c.Icon size={24} className="sm:hidden" />
+                      <c.Icon size={28} className="hidden sm:block" />
                     </div>
-                    <h3 className="mt-3 text-base font-bold text-zinc-900 dark:text-zinc-50">
+                    <h3 className="mt-3 text-sm font-bold text-zinc-900 sm:text-base dark:text-zinc-50">
                       {c.title}
                     </h3>
                     <ul
                       role="list"
-                      className="mt-3 space-y-1.5 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400"
+                      className="mt-2 space-y-1.5 text-[13px] leading-relaxed text-zinc-600 sm:mt-3 sm:text-xs dark:text-zinc-400"
                     >
                       {c.lines.map((l) => (
                         <li key={l} className="flex gap-2">
@@ -598,7 +602,7 @@ export default function Home() {
                     </ul>
                     <Link
                       href={c.linkHref}
-                      className="mt-4 inline-flex text-sm font-semibold text-indigo-600 dark:text-indigo-400"
+                      className="mt-4 inline-flex text-xs font-semibold text-indigo-600 sm:text-sm dark:text-indigo-400"
                     >
                       {c.linkLabel}
                     </Link>
@@ -611,11 +615,11 @@ export default function Home() {
             <section id="why-use" aria-labelledby="why-heading">
               <h2
                 id="why-heading"
-                className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+                className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl dark:text-zinc-50"
               >
                 Why UCASCalculator.com Is The Most Trusted Tariff Tool
               </h2>
-              <p className="mt-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-3 text-sm leading-7 text-zinc-700 sm:mt-4 sm:text-base dark:text-zinc-300">
                 Hundreds of UCAS calculators exist across university sites, school intranets,
                 college prospectuses and third-party blogs. Most were built between 2015 and
                 2019 and were never systematically updated after the 2017 Tariff reform. Many
@@ -625,7 +629,7 @@ export default function Home() {
                 UCASCalculator.com from scratch for the 2025 cycle with four editorial and
                 technical guarantees.
               </p>
-              <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-6 grid gap-3 sm:mt-8 sm:gap-4 lg:gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {[
                   {
                     Icon: IconShieldCheck,
@@ -654,19 +658,20 @@ export default function Home() {
                 ].map((c) => (
                   <div
                     key={c.title}
-                    className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
+                    className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md sm:p-5 dark:border-zinc-800 dark:bg-zinc-900"
                   >
                     <div
                       aria-hidden
                       className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-gradient-to-br from-indigo-500/10 via-violet-500/10 to-transparent blur-2xl group-hover:from-indigo-500/20 group-hover:via-fuchsia-500/15"
                     />
-                    <div className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${c.accent}`} aria-hidden>
-                      <c.Icon size={22} />
+                    <div className={`inline-flex h-9 w-9 items-center justify-center rounded-xl sm:h-10 sm:w-10 ${c.accent}`} aria-hidden>
+                      <c.Icon size={20} className="sm:hidden" />
+                      <c.Icon size={22} className="hidden sm:block" />
                     </div>
-                    <h3 className="mt-3 text-sm font-bold text-zinc-900 dark:text-zinc-50">
+                    <h3 className="mt-3 text-xs font-bold text-zinc-900 sm:text-sm dark:text-zinc-50">
                       {c.title}
                     </h3>
-                    <p className="mt-2 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    <p className="mt-2 text-[13px] leading-relaxed text-zinc-600 sm:text-xs dark:text-zinc-400">
                       {c.body}
                     </p>
                   </div>
@@ -678,32 +683,32 @@ export default function Home() {
             <section id="benchmarks" aria-labelledby="bench-heading">
               <h2
                 id="bench-heading"
-                className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+                className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl dark:text-zinc-50"
               >
                 UCAS Tariff Points Reference Benchmarks 2025/2026
               </h2>
-              <p className="mt-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-3 text-sm leading-7 text-zinc-700 sm:mt-4 sm:text-base dark:text-zinc-300">
                 Use these common Tariff bands as a quick reality-check on your total. Figures in
                 the table are A-Level three-subject equivalents plus typical real-world course
                 context for 2025 and 2026 entry. Remember that every university and course sets
                 its own rules — these benchmarks are indicative, not formal offer thresholds.
               </p>
 
-              <div className="mt-6 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+              <div className="mt-5 overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm sm:mt-6 dark:border-zinc-800 dark:bg-zinc-900">
                 <div className="overflow-x-auto">
-                  <table className="min-w-full border-collapse text-sm">
+                  <table className="min-w-full border-collapse text-xs sm:text-sm">
                     <caption className="sr-only">
                       UCAS Tariff points reference benchmarks for 2025 and 2026 UK university entry
                     </caption>
                     <thead className="bg-zinc-100 dark:bg-zinc-800">
                       <tr>
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-zinc-900 dark:text-zinc-50">
+                        <th scope="col" className="px-3 py-2.5 text-left font-semibold text-zinc-900 sm:px-4 sm:py-3 dark:text-zinc-50">
                           UCAS points
                         </th>
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-zinc-900 dark:text-zinc-50">
-                          A-Level (3 subjects) equivalent
+                        <th scope="col" className="px-3 py-2.5 text-left font-semibold text-zinc-900 sm:px-4 sm:py-3 dark:text-zinc-50">
+                          A-Level (3) eq.
                         </th>
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-zinc-900 dark:text-zinc-50">
+                        <th scope="col" className="px-3 py-2.5 text-left font-semibold text-zinc-900 sm:px-4 sm:py-3 dark:text-zinc-50">
                           Typical UK university course context
                         </th>
                       </tr>
@@ -711,15 +716,15 @@ export default function Home() {
                     <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
                       {REFERENCE_BENCHMARKS.map((b) => (
                         <tr key={b.points}>
-                          <td className="px-4 py-3 font-semibold tabular-nums text-zinc-900 dark:text-zinc-50">
-                            <span className="inline-flex rounded-md bg-indigo-50 px-2 py-0.5 font-semibold text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">
+                          <td className="px-3 py-2.5 font-semibold tabular-nums text-zinc-900 sm:px-4 sm:py-3 dark:text-zinc-50">
+                            <span className="inline-flex rounded-md bg-indigo-50 px-2 py-0.5 text-[13px] font-semibold text-indigo-700 sm:text-sm dark:bg-indigo-500/10 dark:text-indigo-300">
                               {b.points}
                             </span>
                           </td>
-                          <td className="px-4 py-3 tabular-nums text-zinc-700 dark:text-zinc-200">
+                          <td className="px-3 py-2.5 tabular-nums text-zinc-700 sm:px-4 sm:py-3 dark:text-zinc-200">
                             {b.label}
                           </td>
-                          <td className="px-4 py-3 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+                          <td className="px-3 py-2.5 text-[13px] leading-relaxed text-zinc-600 sm:px-4 sm:py-3 sm:text-xs dark:text-zinc-400">
                             {b.context}
                           </td>
                         </tr>
@@ -734,16 +739,16 @@ export default function Home() {
             <section id="tools" aria-labelledby="tools-heading">
               <h2
                 id="tools-heading"
-                className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+                className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl dark:text-zinc-50"
               >
                 Popular UCAS Tariff Guides and Reference Pages
               </h2>
-              <p className="mt-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-3 text-sm leading-7 text-zinc-700 sm:mt-4 sm:text-base dark:text-zinc-300">
                 Jump straight into the detailed, grade-by-grade UCAS guide for your
                 qualification, or open the complete 2025/2026 Tariff table to search, filter and
                 sort every published value by qualification, grade or points band.
               </p>
-              <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-6 grid gap-3 sm:mt-8 sm:gap-4 lg:gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {[
                   {
                     href: "/a-level-ucas-points",
@@ -803,26 +808,27 @@ export default function Home() {
                   <Link
                     key={card.href}
                     href={card.href}
-                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
+                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 sm:p-5 lg:p-6 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
                   >
                     <div className="flex items-start justify-between">
                       <div
-                        className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${card.accent} text-white shadow-sm`}
+                        className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${card.accent} text-white shadow-sm sm:h-11 sm:w-11`}
                         aria-hidden
                       >
-                        <card.Icon size={22} />
+                        <card.Icon size={20} className="sm:hidden" />
+                        <card.Icon size={22} className="hidden sm:block" />
                       </div>
                       <span className="inline-flex items-center rounded-full bg-zinc-100 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-zinc-700 ring-1 ring-inset ring-zinc-200 dark:bg-zinc-800 dark:text-zinc-200 dark:ring-zinc-700">
                         {card.badge}
                       </span>
                     </div>
-                    <h3 className="mt-5 text-lg font-bold text-zinc-900 group-hover:text-indigo-600 dark:text-zinc-50 dark:group-hover:text-indigo-400">
+                    <h3 className="mt-4 text-base font-bold text-zinc-900 group-hover:text-indigo-600 sm:mt-5 sm:text-lg dark:text-zinc-50 dark:group-hover:text-indigo-400">
                       {card.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                    <p className="mt-2 text-xs leading-6 text-zinc-600 sm:text-sm dark:text-zinc-400">
                       {card.desc}
                     </p>
-                    <div className="mt-5 inline-flex text-sm font-semibold text-indigo-600 dark:text-indigo-400">
+                    <div className="mt-4 inline-flex text-xs font-semibold text-indigo-600 sm:mt-5 sm:text-sm dark:text-indigo-400">
                       {card.cta}
                     </div>
                   </Link>
@@ -834,11 +840,11 @@ export default function Home() {
             <section id="faq" aria-labelledby="faq-heading">
               <h2
                 id="faq-heading"
-                className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
+                className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl dark:text-zinc-50"
               >
                 UCAS Tariff Frequently Asked Questions
               </h2>
-              <p className="mt-4 text-base leading-7 text-zinc-700 dark:text-zinc-300">
+              <p className="mt-3 text-sm leading-7 text-zinc-700 sm:mt-4 sm:text-base dark:text-zinc-300">
                 These are the nine most commonly searched questions about UCAS Tariff points,
                 covering A-Level conversions, BTEC equivalence, old versus new scale differences,
                 EPQ counting, Scottish sub-grades and typical clearing thresholds for the current
@@ -846,21 +852,22 @@ export default function Home() {
                 structured FAQPage data so the content is fully readable by search engines and
                 answer-focused interfaces.
               </p>
-              <div className="mt-8 divide-y divide-zinc-200 rounded-2xl border border-zinc-200 bg-white dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900">
+              <div className="mt-6 divide-y divide-zinc-200 rounded-2xl border border-zinc-200 bg-white sm:mt-8 dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900">
                 {FAQ.map((f, i) => (
-                  <details key={i} className="group px-6 py-5" open={i === 0}>
-                    <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left">
-                      <span className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
+                  <details key={i} className="group px-4 py-4 sm:px-6 sm:py-5" open={i === 0}>
+                    <summary className="flex cursor-pointer list-none items-start justify-between gap-3 text-left sm:gap-4">
+                      <span className="text-sm font-semibold text-zinc-900 sm:text-base dark:text-zinc-50">
                         {f.q}
                       </span>
                       <span
                         aria-hidden
-                        className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-600 transition-transform group-open:rotate-45 dark:bg-zinc-800 dark:text-zinc-300"
+                        className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-zinc-600 transition-transform group-open:rotate-45 sm:h-6 sm:w-6 dark:bg-zinc-800 dark:text-zinc-300"
                       >
-                        <IconPlus size={14} />
+                        <IconPlus size={13} className="sm:hidden" />
+                        <IconPlus size={14} className="hidden sm:block" />
                       </span>
                     </summary>
-                    <p className="mt-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
+                    <p className="mt-3 text-xs leading-7 text-zinc-700 sm:text-sm dark:text-zinc-300">
                       {f.a}
                     </p>
                   </details>
@@ -872,32 +879,34 @@ export default function Home() {
             <section
               id="cta"
               aria-labelledby="cta-heading"
-              className="rounded-3xl border border-indigo-200 bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 p-8 text-white shadow-xl shadow-indigo-500/20 sm:p-12 dark:border-indigo-900/60"
+              className="rounded-3xl border border-indigo-200 bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 p-5 text-white shadow-xl shadow-indigo-500/20 sm:p-8 lg:p-12 dark:border-indigo-900/60"
             >
               <h2
                 id="cta-heading"
-                className="text-2xl font-bold tracking-tight sm:text-3xl"
+                className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl lg:text-4xl"
               >
                 Start Calculating Your Full UCAS Tariff Total Now
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-white/90">
+              <p className="mt-2.5 max-w-2xl text-xs leading-7 text-white/90 sm:mt-3 sm:text-sm">
                 Jump back to the live calculator at the top of the page and start adding your
                 qualifications. For grade-by-grade lookup tables, visual equivalence charts, the
                 full HTML Tariff table, Access D/M/P combinations and the complete Scottish Band
                 split, open the dedicated UCAS Tariff guide or the full sortable Tariff table.
               </p>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-5 flex flex-col gap-2.5 sm:mt-6 sm:flex-row sm:gap-3">
                 <Link
                   href="/"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-base font-semibold text-indigo-700 shadow-lg shadow-indigo-900/20 transition-colors hover:bg-zinc-100"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-semibold text-indigo-700 shadow-lg shadow-indigo-900/20 transition-colors hover:bg-zinc-100 sm:h-12 sm:px-6 sm:text-base"
                 >
-                  <IconCalculator size={20} /> Open Full Tariff Guide
+                  <IconCalculator size={18} className="sm:hidden" />
+                  <IconCalculator size={20} className="hidden sm:block" /> Open Full Tariff Guide
                 </Link>
                 <Link
                   href="/ucas-tariff-points-table"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-6 text-base font-medium text-white transition-colors hover:bg-white/20"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white/30 bg-white/10 px-5 text-sm font-medium text-white transition-colors hover:bg-white/20 sm:h-12 sm:px-6 sm:text-base"
                 >
-                  <IconTable size={20} /> Open Complete Tariff Table
+                  <IconTable size={18} className="sm:hidden" />
+                  <IconTable size={20} className="hidden sm:block" /> Open Complete Tariff Table
                 </Link>
               </div>
             </section>

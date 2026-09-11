@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import { IconTLevel, IconCalculator, IconTable, IconBTEC, IconALevel } from "@/components/icons";
@@ -150,7 +150,7 @@ export default function TLevelUcasPointsPage() {
 
       <section className="relative overflow-hidden border-b border-zinc-200 bg-gradient-to-b from-white via-rose-50/30 to-zinc-50 pb-14 pt-12 sm:pt-16 dark:border-zinc-800 dark:from-zinc-950 dark:via-rose-950/10 dark:to-zinc-950">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(244,63,94,0.12),transparent_55%),radial-gradient(circle_at_bottom_right,_rgba(99,102,241,0.1),transparent_50%)]" />
-        <div className="relative mx-auto w-full max-w-[1000px] px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
             <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-rose-500 to-orange-500 text-white shadow-lg shadow-rose-500/10 ring-4 ring-white/60 dark:ring-zinc-900/60 sm:h-16 sm:w-16">
               <IconTLevel size={26} />
@@ -169,7 +169,7 @@ export default function TLevelUcasPointsPage() {
               T-Levels are tariffed at three A-Level-equivalent size: Distinction = 144 = AAA.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link href="/" className="inline-flex h-11 items-center gap-2 rounded-xl bg-zinc-900 px-5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-white">
+              <Link href="/#calculator" className="inline-flex h-11 items-center gap-2 rounded-xl bg-zinc-900 px-5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-white">
                 <IconCalculator size={18} /> Calculate Tariff total
               </Link>
               <Link href="/ucas-tariff-points-table" className="inline-flex h-11 items-center gap-2 rounded-xl border border-zinc-300 bg-white px-5 text-sm font-semibold text-zinc-900 shadow-sm hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-50 dark:hover:bg-zinc-800">
@@ -189,7 +189,7 @@ export default function TLevelUcasPointsPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-[1000px] space-y-14 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <section className="mx-auto w-full max-w-6xl space-y-14 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
         {/* Full T-Level table */}
         <section aria-labelledby="tlevel-full-heading">
           <h2 id="tlevel-full-heading" className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50">

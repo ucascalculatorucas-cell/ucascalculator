@@ -50,7 +50,7 @@ const LAST_UPDATED = "18 August 2026";
 
 export default function TermsPage() {
   return (
-    <article className="mx-auto w-full max-w-[1000px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+    <article className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <header className="mb-10 border-b border-zinc-200 pb-8 dark:border-zinc-800">
         <p className="text-xs font-semibold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
           Legal

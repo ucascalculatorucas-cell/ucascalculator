@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -113,8 +113,8 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
   if (!post) notFound();
 
   return (
-    <main className="relative mx-auto w-full max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-      <article className="rounded-3xl border border-zinc-200 bg-white p-6 sm:p-10 dark:border-zinc-800 dark:bg-zinc-950">
+    <main className="relative mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+      <article className="mx-auto max-w-3xl rounded-3xl border border-zinc-200 bg-white p-6 sm:p-10 dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex flex-wrap items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-1 font-medium text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
             {post.tag}
@@ -151,7 +151,7 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
             ← Back to Blog index
           </Link>
           <Link
-            href="/"
+            href="/#calculator"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-500"
           >
             Open UCAS Calculator

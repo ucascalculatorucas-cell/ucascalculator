@@ -68,7 +68,7 @@ export default function AboutUsPage() {
           aria-hidden
           className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(circle_at_top_right,_rgba(99,102,241,0.14),transparent_55%),radial-gradient(circle_at_bottom_left,_rgba(168,85,247,0.10),transparent_50%)]"
         />
-        <div className="relative mx-auto w-full max-w-[1000px] px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <div className="relative mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             Independent UCAS Tariff tools,{" "}
             <span className="bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
@@ -85,7 +85,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      <article className="mx-auto w-full max-w-[1000px] px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+      <article className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
         <div className="flex flex-col gap-16">
           {/* Our Mission */}
           <section aria-labelledby="mission-heading" className="scroll-mt-24">

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -83,7 +83,7 @@ const POSTS = [
 
 export default function BlogIndexPage() {
   return (
-    <main className="relative mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <main className="relative mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <header className="max-w-3xl">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-indigo-600 dark:text-indigo-400">
           UCAS Blog
@@ -155,7 +155,7 @@ export default function BlogIndexPage() {
             </p>
           </div>
           <Link
-            href="/"
+            href="/#calculator"
             className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-indigo-600 px-6 text-base font-semibold text-white shadow-sm transition-colors hover:bg-indigo-500"
           >
             Open UCAS Calculator

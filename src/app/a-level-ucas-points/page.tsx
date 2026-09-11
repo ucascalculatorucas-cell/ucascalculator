@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import { IconALevel, IconCalculator, IconTable, IconBTEC, IconIB } from "@/components/icons";
@@ -125,7 +125,7 @@ export default function ALevelUcasPointsPage() {
         })}
       </Script>
 
-      <article className="mx-auto w-full max-w-[1000px] px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <article className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         {/* Hero + H1 */}
         <header className="mb-10 border-b border-zinc-200 pb-8 dark:border-zinc-800">
           <div className="flex items-center gap-3 text-indigo-600 dark:text-indigo-400" aria-hidden>
@@ -152,7 +152,7 @@ export default function ALevelUcasPointsPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href="/"
+              href="/#calculator"
               className="inline-flex h-11 items-center gap-2 rounded-xl bg-indigo-600 px-5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500"
             >
               <IconCalculator size={18} /> Calculate your total now

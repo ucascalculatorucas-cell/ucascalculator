@@ -114,14 +114,7 @@ export function SiteFooter() {
                   Full UCAS Tariff Table 2025/2026
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/sitemap.xml"
-                  className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
-                >
-                  Complete Sitemap
-                </Link>
-              </li>
+              
               <li>
                 <Link
                   href="/about-us/"
@@ -136,6 +129,14 @@ export function SiteFooter() {
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/sitemap.xml"
+                  className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
+                >
+                  Complete Sitemap
                 </Link>
               </li>
             </ul>
