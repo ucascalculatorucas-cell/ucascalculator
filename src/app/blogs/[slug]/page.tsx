@@ -158,6 +158,69 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
           </Link>
         </div>
       </article>
+
+      <section aria-labelledby="more-posts-heading" className="mx-auto mt-12 max-w-3xl">
+        <h2
+          id="more-posts-heading"
+          className="text-lg font-bold tracking-tight text-zinc-900 sm:text-xl dark:text-zinc-50"
+        >
+          More UCAS blog posts
+        </h2>
+        <ul role="list" className="mt-5 grid gap-3 sm:grid-cols-2">
+          {Object.entries(POSTS)
+            .filter(([slug]) => slug !== params.slug)
+            .slice(0, 6)
+            .map(([slug, p]) => (
+              <li key={slug}>
+                <Link
+                  href={`/blogs/${slug}/`}
+                  className="group flex h-full flex-col gap-2 rounded-2xl border border-zinc-200 bg-white p-4 transition-colors hover:border-indigo-200 hover:bg-indigo-50/30 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-indigo-900/50 dark:hover:bg-indigo-950/20"
+                >
+                  <span className="inline-flex w-fit items-center rounded-full bg-indigo-50 px-2.5 py-0.5 text-[10px] font-medium text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
+                    {p.tag}
+                  </span>
+                  <span className="text-sm font-semibold leading-snug text-zinc-900 group-hover:text-indigo-600 dark:text-zinc-50 dark:group-hover:text-indigo-400">
+                    {p.title}
+                  </span>
+                  <span className="text-xs text-zinc-500 dark:text-zinc-400">
+                    {p.date} · {p.readTime} →
+                  </span>
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </section>
+
+      <section aria-labelledby="related-tools-heading" className="mx-auto mt-10 max-w-3xl">
+        <h2
+          id="related-tools-heading"
+          className="text-lg font-bold tracking-tight text-zinc-900 sm:text-xl dark:text-zinc-50"
+        >
+          Related UCAS tools and guides
+        </h2>
+        <ul role="list" className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { href: "/", label: "UCAS Tariff Points Calculator" },
+            { href: "/ucas-tariff-points-table/", label: "Full UCAS Tariff Table" },
+            { href: "/a-level-ucas-points/", label: "A-Level Tariff Guide" },
+            { href: "/btec-ucas-points/", label: "BTEC Tariff Guide" },
+            { href: "/ib-ucas-points/", label: "IB Tariff Guide" },
+            { href: "/t-level-ucas-points/", label: "T-Level Tariff Guide" },
+            { href: "/scottish-highers-ucas-points/", label: "Scottish Highers Guide" },
+            { href: "/access-epq-ucas-points/", label: "Access & EPQ Guide" },
+            { href: "/about-us/", label: "About UCASCalculator.com" },
+          ].map((l) => (
+            <li key={l.href}>
+              <Link
+                href={l.href}
+                className="inline-flex items-center rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-800 transition-colors hover:border-indigo-200 hover:text-indigo-600 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-200 dark:hover:border-indigo-900/50 dark:hover:text-indigo-400"
+              >
+                {l.label} →
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
     </main>
   );
 }

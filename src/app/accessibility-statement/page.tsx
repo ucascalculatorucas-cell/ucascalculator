@@ -138,7 +138,7 @@ export default function AccessibilityPage() {
               </a>{" "}
               with &ldquo;Accessibility Issue&rdquo; in the subject line, or use our{" "}
               <Link
-                href="/contact/"
+                href="/contact-us/"
                 className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
               >
                 Contact form

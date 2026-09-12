@@ -203,7 +203,7 @@ export default function CookiesPolicyPage() {
               </a>{" "}
               or use the{" "}
               <Link
-                href="/contact/"
+                href="/contact-us/"
                 className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
               >
                 Contact form

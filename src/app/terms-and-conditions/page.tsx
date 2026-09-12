@@ -458,7 +458,7 @@ export default function TermsPage() {
                     Contact form
                   </div>
                   <Link
-                    href="/contact"
+                    href="/contact-us/"
                     className="mt-1 inline-block text-base font-semibold text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-400"
                   >
                     Visit the Contact page &rarr;

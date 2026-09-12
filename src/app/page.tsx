@@ -836,6 +836,209 @@ export default function Home() {
               </div>
             </section>
 
+            {/* F2. LATEST BLOG POSTS (internal deep-links to individual blog slugs — resolve orphan pages) */}
+            <section id="blog" aria-labelledby="blog-heading">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <h2
+                    id="blog-heading"
+                    className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl dark:text-zinc-50"
+                  >
+                    Latest from the UCAS Advice Blog
+                  </h2>
+                  <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-700 sm:text-base dark:text-zinc-300">
+                    Long-form, fact-checked UCAS guides and Results-Day checklists rooted in the official
+                    2017-reform Tariff table, real UK university offer data and 2025/26 cycle updates.
+                  </p>
+                </div>
+                <Link
+                  href="/blogs/"
+                  className="inline-flex h-10 items-center gap-1 rounded-xl border border-zinc-200 bg-white px-4 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-50 dark:hover:bg-zinc-800"
+                >
+                  View all posts →
+                </Link>
+              </div>
+              <div className="mt-6 grid gap-3 sm:mt-8 sm:gap-4 sm:grid-cols-2 lg:gap-5 lg:grid-cols-3">
+                {[
+                  {
+                    slug: "ucas-tariff-2025-26-what-changed",
+                    tag: "Tariff News",
+                    date: "14 Aug 2026",
+                    readTime: "6 min",
+                    title: "UCAS Tariff 2025/26: What Actually Changed vs Last Cycle",
+                    excerpt:
+                      "New T-Level Core scale, Scottish banding granularity, BTEC RQF crosswalk and what A-Level resit rule changes mean for your 2025/26 points total.",
+                    accent: "from-indigo-500 to-violet-500",
+                  },
+                  {
+                    slug: "clearing-checklist-2026",
+                    tag: "Results Day",
+                    date: "10 Aug 2026",
+                    readTime: "5 min",
+                    title: "Results Day & Clearing 2026: 10-Step Survival Checklist",
+                    excerpt:
+                      "UCAS Hub prep, Tariff sum before 08:00, grade boundary screenshots, university call scripts and the exact moment to dial Clearing hotlines.",
+                    accent: "from-emerald-500 to-teal-500",
+                  },
+                  {
+                    slug: "btec-vs-t-level-ucas-points",
+                    tag: "Qualification Guides",
+                    date: "2 Aug 2026",
+                    readTime: "8 min",
+                    title: "BTEC Extended Diploma vs T-Level: UCAS Points Side-by-Side",
+                    excerpt:
+                      "BTEC D*D*D* vs T-Level Distinction* — both 168 UCAS points on paper, but which pathway do Russell Group unis actually prefer in 2025/26?",
+                    accent: "from-fuchsia-500 to-pink-500",
+                  },
+                  {
+                    slug: "ib-tariff-40-42-43-how-many-points",
+                    tag: "IB Deep-Dive",
+                    date: "25 Jul 2026",
+                    readTime: "7 min",
+                    title: "IB 38 / 40 / 42 / 43+ — How Many UCAS Tariff Points Each Profile Actually Gives You",
+                    excerpt:
+                      "HL/SL split matters more than the raw total. Most common IB predicted profiles mapped to exact 2017-reform Tariff values + UK university offer comparisons.",
+                    accent: "from-sky-500 to-blue-500",
+                  },
+                  {
+                    slug: "epq-ucas-points-russell-group",
+                    tag: "Subject Tips",
+                    date: "15 Jul 2026",
+                    readTime: "6 min",
+                    title: "EPQ A* = 28 Points, but Does Your Russell Group Course Actually Count It?",
+                    excerpt:
+                      "Which RG medical schools explicitly exclude EPQ, which LSE + Oxbridge colleges use EPQ for reduced offers and when resitting EPQ is worth it.",
+                    accent: "from-amber-500 to-orange-500",
+                  },
+                  {
+                    slug: "scottish-highers-band1-band2-tariff",
+                    tag: "Scottish",
+                    date: "8 Jul 2026",
+                    readTime: "5 min",
+                    title: "Scottish Highers: Band-1 vs Band-2 — the 3-Point Tariff Gap That Changes Offers",
+                    excerpt:
+                      "The Band-1 / Band-2 Tariff split inside grades A, B, C is easily missed. Which unis see the band detail on your UCAS form and how to maximise borderline Band-1 predictions.",
+                    accent: "from-rose-500 to-red-500",
+                  },
+                ].map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/blogs/${post.slug}/`}
+                    className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 sm:p-5 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
+                  >
+                    <div
+                      aria-hidden
+                      className={`pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r ${post.accent}`}
+                    />
+                    <div className="flex items-center justify-between text-[11px] text-zinc-500 dark:text-zinc-400">
+                      <span className="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-1 font-medium text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
+                        {post.tag}
+                      </span>
+                      <span>
+                        {post.date} · {post.readTime}
+                      </span>
+                    </div>
+                    <h3 className="mt-3 text-sm font-bold leading-snug text-zinc-900 group-hover:text-indigo-600 sm:mt-4 sm:text-base dark:text-zinc-50 dark:group-hover:text-indigo-400">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 flex-1 text-xs leading-6 text-zinc-600 sm:text-sm dark:text-zinc-400">
+                      {post.excerpt}
+                    </p>
+                    <span className="mt-4 inline-flex text-xs font-semibold text-indigo-600 sm:text-sm dark:text-indigo-400">
+                      Read article →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            {/* F3. COMPANY & REFERENCE PAGES — About Us, Contact, Full Tariff Table */}
+            <section id="company" aria-labelledby="company-heading">
+              <h2
+                id="company-heading"
+                className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl md:text-3xl dark:text-zinc-50"
+              >
+                More UCAS Resources &amp; Company
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-700 sm:mt-3 sm:text-base dark:text-zinc-300">
+                Complete HTML Tariff table (searchable, filterable, sortable), company information
+                and contact channels for students, parents and advisors.
+              </p>
+              <div className="mt-5 grid gap-3 sm:mt-6 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <Link
+                  href="/ucas-tariff-points-table/"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 sm:p-5 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-indigo-500 via-violet-500 to-indigo-500"
+                  />
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-sm sm:h-11 sm:w-11" aria-hidden>
+                    <IconTable size={20} className="sm:hidden" />
+                    <IconTable size={22} className="hidden sm:block" />
+                  </div>
+                  <h3 className="mt-4 text-base font-bold text-zinc-900 group-hover:text-indigo-600 sm:mt-5 sm:text-lg dark:text-zinc-50 dark:group-hover:text-indigo-400">
+                    Full UCAS Tariff Points Table (2025/26)
+                  </h3>
+                  <p className="mt-2 text-xs leading-6 text-zinc-600 sm:text-sm dark:text-zinc-400">
+                    Complete 2017-reform Tariff table in HTML — search, filter and sort every published
+                    grade-by-grade value for A-Level, BTEC, IB, Scotland, T-Level, Access &amp; EPQ.
+                  </p>
+                  <span className="mt-4 inline-flex text-xs font-semibold text-indigo-600 sm:text-sm dark:text-indigo-400">
+                    Open Tariff table →
+                  </span>
+                </Link>
+
+                <Link
+                  href="/about-us/"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 sm:p-5 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500"
+                  />
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-600 to-teal-600 text-white shadow-sm sm:h-11 sm:w-11" aria-hidden>
+                    <IconShieldCheck size={20} className="sm:hidden" />
+                    <IconShieldCheck size={22} className="hidden sm:block" />
+                  </div>
+                  <h3 className="mt-4 text-base font-bold text-zinc-900 group-hover:text-indigo-600 sm:mt-5 sm:text-lg dark:text-zinc-50 dark:group-hover:text-indigo-400">
+                    About UCASCalculator.com
+                  </h3>
+                  <p className="mt-2 text-xs leading-6 text-zinc-600 sm:text-sm dark:text-zinc-400">
+                    Who builds UCASCalculator.com, how we source, cross-check and validate every
+                    Tariff value we publish, editorial standards and our independence guarantees.
+                  </p>
+                  <span className="mt-4 inline-flex text-xs font-semibold text-indigo-600 sm:text-sm dark:text-indigo-400">
+                    About the team →
+                  </span>
+                </Link>
+
+                <Link
+                  href="/contact-us/"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 sm:p-5 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
+                >
+                  <div
+                    aria-hidden
+                    className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500"
+                  />
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-amber-600 to-orange-600 text-white shadow-sm sm:h-11 sm:w-11" aria-hidden>
+                    <IconBolt size={20} className="sm:hidden" />
+                    <IconBolt size={22} className="hidden sm:block" />
+                  </div>
+                  <h3 className="mt-4 text-base font-bold text-zinc-900 group-hover:text-indigo-600 sm:mt-5 sm:text-lg dark:text-zinc-50 dark:group-hover:text-indigo-400">
+                    Contact Us
+                  </h3>
+                  <p className="mt-2 text-xs leading-6 text-zinc-600 sm:text-sm dark:text-zinc-400">
+                    Email support, response-time SLAs, Tariff-value correction process and how to
+                    report errors, broken links or suggest a new qualification guide for the site.
+                  </p>
+                  <span className="mt-4 inline-flex text-xs font-semibold text-indigo-600 sm:text-sm dark:text-indigo-400">
+                    Get in touch →
+                  </span>
+                </Link>
+              </div>
+            </section>
+
             {/* G. FAQs (People Also Ask / SXO intent) */}
             <section id="faq" aria-labelledby="faq-heading">
               <h2

@@ -138,7 +138,7 @@ export default function PrivacyPolicyPage() {
               protection rights, please contact our Data Protection Officer (DPO) using
               the email or postal address above. You may also use our{" "}
               <Link
-                href="/contact"
+                href="/contact-us/"
                 className="font-medium text-indigo-600 underline decoration-zinc-300 decoration-2 underline-offset-4 transition-colors hover:text-indigo-500 hover:decoration-indigo-300 dark:text-indigo-400 dark:decoration-zinc-700 dark:hover:text-indigo-300 dark:hover:decoration-indigo-900"
               >
                 contact page
@@ -645,7 +645,7 @@ export default function PrivacyPolicyPage() {
               For non-data-protection matters, feedback, bug reports or general
               questions, you may also use the{" "}
               <Link
-                href="/contact"
+                href="/contact-us/"
                 className="font-medium text-indigo-600 underline decoration-zinc-300 decoration-2 underline-offset-4 transition-colors hover:text-indigo-500 hover:decoration-indigo-300 dark:text-indigo-400 dark:decoration-zinc-700 dark:hover:text-indigo-300 dark:hover:decoration-indigo-900"
               >
                 general contact form

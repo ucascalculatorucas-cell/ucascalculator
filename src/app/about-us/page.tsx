@@ -347,7 +347,7 @@ export default function AboutUsPage() {
               </p>
               <div className="pt-2">
                 <Link
-                  href="/contact"
+                  href="/contact-us/"
                   className="inline-flex h-12 items-center justify-center rounded-xl bg-indigo-600 px-6 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 transition-colors hover:bg-indigo-500"
                 >
                   Contact the UCASCalculator.com team
