@@ -16,8 +16,9 @@ export const seoType = defineType({
       type: "string",
       group: "basic",
       description:
-        "Browser tab / Google title. Leave blank to use the post title. Ideal ~50–60 chars.",
-      validation: (rule) => rule.max(70).warning("Keep under 60 characters when possible"),
+        "Browser tab / Google title. Leave blank to use the post title. Ideal about 50-60 chars.",
+      validation: (rule) =>
+        rule.max(70).warning("Keep under 60 characters when possible"),
     }),
     defineField({
       name: "metaDescription",
@@ -26,7 +27,7 @@ export const seoType = defineType({
       rows: 3,
       group: "basic",
       description:
-        "Google snippet text. Leave blank to use the excerpt. Ideal ~150–160 chars.",
+        "Google snippet text. Leave blank to use the excerpt. Ideal about 150-160 chars.",
       validation: (rule) =>
         rule.max(180).warning("Keep under 160 characters when possible"),
     }),
@@ -79,7 +80,7 @@ export const seoType = defineType({
       title: "OG / social title",
       type: "string",
       group: "social",
-      description: "Facebook, LinkedIn, etc. Falls back to meta title → post title",
+      description: "Facebook, LinkedIn, etc. Falls back to meta title, then post title",
       validation: (rule) => rule.max(95),
     }),
     defineField({
@@ -95,7 +96,7 @@ export const seoType = defineType({
       title: "OG / social image",
       type: "image",
       group: "social",
-      description: "Recommended 1200×630. Falls back to main image",
+      description: "Recommended 1200x630. Falls back to main image",
       options: { hotspot: true },
       fields: [
         defineField({
@@ -125,7 +126,7 @@ export const seoType = defineType({
       title: "Twitter / X image",
       type: "image",
       group: "social",
-      description: "Falls back to OG image → main image",
+      description: "Falls back to OG image, then main image",
       options: { hotspot: true },
       fields: [
         defineField({
