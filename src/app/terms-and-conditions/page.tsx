@@ -433,10 +433,10 @@ export default function TermsPage() {
                     Email (primary)
                   </div>
                   <a
-                    href="mailto:hello@ucascalculator.com"
+                    href="mailto:ucascalculatorucas@gmail.com"
                     className="mt-1 block text-base font-semibold text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-400"
                   >
-                    hello@ucascalculator.com
+                    ucascalculatorucas@gmail.com
                   </a>
                 </div>
               </li>

@@ -125,10 +125,10 @@ export default function PrivacyPolicyPage() {
               <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
                 Data Controller contact:&nbsp;
                 <a
-                  href="mailto:dpo@ucascalculator.com"
+                  href="mailto:ucascalculatorucas@gmail.com"
                   className="font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                 >
-                  dpo@ucascalculator.com
+                  ucascalculatorucas@gmail.com
                 </a>
               </p>
             </address>
@@ -224,7 +224,7 @@ export default function PrivacyPolicyPage() {
                       <strong className="font-medium text-zinc-800 dark:text-zinc-100">
                         Email correspondence:
                       </strong>{" "}
-                      if you send us an email at dpo@ucascalculator.com or any other
+                      if you send us an email at ucascalculatorucas@gmail.com or any other
                       published address, we will store your email address, display name,
                       any attachments and the full content of the message.
                     </span>
@@ -264,7 +264,7 @@ export default function PrivacyPolicyPage() {
               We do not knowingly collect or solicit personal data from children under the
               age of 13 or equivalent age of digital consent in your jurisdiction. If you
               believe that we have received personal data from a person under the relevant
-              age threshold, please contact our DPO immediately at dpo@ucascalculator.com
+              age threshold, please contact our DPO immediately at ucascalculatorucas@gmail.com
               and we will take reasonable steps to irretrievably delete that information
               from our systems.
             </p>
@@ -524,7 +524,7 @@ export default function PrivacyPolicyPage() {
                 sharing of personal information for cross-context behavioural advertising
                 on that browser and device, without requiring you to submit a separate
                 request. To make a verified consumer request under the CCPA, please email
-                our DPO at dpo@ucascalculator.com or write to us at the postal address in
+                our DPO at ucascalculatorucas@gmail.com or write to us at the postal address in
                 section 1. We may require reasonable verification of your identity (for
                 example, confirmation of your email address) before responding to a
                 request for specific pieces of personal information or for deletion, as
@@ -611,10 +611,10 @@ export default function PrivacyPolicyPage() {
                 </h3>
                 <p className="mt-3">
                   <a
-                    href="mailto:dpo@ucascalculator.com"
+                    href="mailto:ucascalculatorucas@gmail.com"
                     className="text-lg font-semibold text-indigo-600 underline underline-offset-4 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
                   >
-                    dpo@ucascalculator.com
+                    ucascalculatorucas@gmail.com
                   </a>
                 </p>
                 <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-300">

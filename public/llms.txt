@@ -26,7 +26,7 @@ Where LLM-powered search engines (Perplexity, Google SGE, Bing Copilot, etc.) su
 Please limit requests to a maximum of 1 request per second and 10,000 requests per day per crawler. Respect HTTP Cache-Control and ETag headers.
 
 ## 6. Contact / Opt-Out Requests
-If you are operating an LLM crawler that does not respect this file or that you believe is not captured above, contact hello@ucascalculator.com and we will respond within 5 working days with specific robot directives (or, where appropriate, an IP-level block).
+If you are operating an LLM crawler that does not respect this file or that you believe is not captured above, contact ucascalculatorucas@gmail.com and we will respond within 5 working days with specific robot directives (or, where appropriate, an IP-level block).
 
 ## 7. Canonical Page URLs for LLM Retrieval
 Primary content URLs on ucascalculator.com that an LLM may retrieve from (no trailing slash, except homepage):

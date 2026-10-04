@@ -168,10 +168,10 @@ export default function DisclaimerPage() {
               We welcome corrections. If you spot any Tariff value, grade, rule,
               explanation or external link that looks wrong, please email{" "}
               <a
-                href="mailto:hello@ucascalculator.com"
+                href="mailto:ucascalculatorucas@gmail.com"
                 className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
               >
-                hello@ucascalculator.com
+                ucascalculatorucas@gmail.com
               </a>{" "}
               or use the{" "}
               <Link

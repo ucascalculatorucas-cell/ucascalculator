@@ -247,7 +247,7 @@ export default function BtecUcasPointsPage() {
               id="sizes-heading"
               className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
             >
-              BTEC Package Sizes Explained — Why the Size Matters More Than the Grade Letter
+              BTEC Package Sizes
             </h2>
             <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
               BTEC Nationals are offered in four standard sizes and the Tariff value scales
@@ -277,7 +277,7 @@ export default function BtecUcasPointsPage() {
           {/* Four tables */}
           <SizeTable
             id="btec-extended"
-            title="BTEC Extended Diploma UCAS Points (3 A-Level sized units)"
+            title="Extended Diploma UCAS Points"
             heading="Most common BTEC size for a full two-year Level 3 programme — used directly as a three-A-Level substitute offer."
             units="3 A-Level units"
             credits="120 credits"
@@ -286,7 +286,7 @@ export default function BtecUcasPointsPage() {
           />
           <SizeTable
             id="btec-diploma"
-            title="BTEC Diploma UCAS Points (2 A-Level sized units)"
+            title="Diploma UCAS Points"
             heading="Often combined with one A-Level subject at Sixth Form to make a standard three-unit academic profile."
             units="2 A-Level units"
             credits="80 credits"
@@ -295,7 +295,7 @@ export default function BtecUcasPointsPage() {
           />
           <SizeTable
             id="btec-subsidiary"
-            title="BTEC Subsidiary Diploma UCAS Points (1 A-Level sized unit)"
+            title="Subsidiary Diploma UCAS Points"
             heading="Single BTEC unit — frequently paired with two A-Levels for a mixed applied/academic offer."
             units="1 A-Level unit"
             credits="40 credits"
@@ -304,7 +304,7 @@ export default function BtecUcasPointsPage() {
           />
           <SizeTable
             id="btec-cert"
-            title="BTEC Certificate UCAS Points (½ A-Level sized unit)"
+            title="Certificate UCAS Points"
             heading="BTEC 90-credit Certificate / National Certificate at half an A-Level size."
             units="½ A-Level unit"
             credits="20 credits"
@@ -318,7 +318,7 @@ export default function BtecUcasPointsPage() {
               id="equiv-heading"
               className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
             >
-              BTEC Subsidiary to A-Level Per-Unit Equivalence Chart
+              BTEC to A-Level Equivalence
             </h2>
             <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
               The Subsidiary Diploma is BTEC&apos;s direct one-to-one A-Level sized package, so
@@ -353,7 +353,7 @@ export default function BtecUcasPointsPage() {
               id="qcf-heading"
               className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50"
             >
-              BTEC QCF vs BTEC RQF — Does the Specification Change the UCAS Tariff Points?
+              BTEC QCF vs RQF
             </h2>
             <p className="mt-3 text-base leading-7 text-zinc-700 dark:text-zinc-300">
               BTEC Nationals were redeveloped from the older Qualifications and Credit Framework
@@ -374,7 +374,7 @@ export default function BtecUcasPointsPage() {
           {/* FAQ */}
           <section id="faq" aria-labelledby="faq-heading">
             <h2 id="faq-heading" className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl dark:text-zinc-50">
-              BTEC UCAS Points — Frequently Asked Questions
+              Frequently Asked Questions
             </h2>
             <div className="mt-6 divide-y divide-zinc-200 overflow-hidden rounded-2xl border border-zinc-200 bg-white dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900">
               {FAQ.map((f, i) => (
@@ -394,7 +394,7 @@ export default function BtecUcasPointsPage() {
           {/* Cross links */}
           <section id="crosslinks" aria-labelledby="xl-heading" className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6 sm:p-8 dark:border-zinc-800 dark:bg-zinc-900/60">
             <h2 id="xl-heading" className="text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl dark:text-zinc-50">
-              Compare BTEC to other UCAS Tariff pathways
+              Compare Other Pathways
             </h2>
             <div className="mt-5 grid gap-4 sm:grid-cols-3">
               <Link
@@ -402,7 +402,7 @@ export default function BtecUcasPointsPage() {
                 className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
               >
                 <IconALevel size={24} className="text-indigo-600 dark:text-indigo-400" />
-                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-indigo-600 dark:text-zinc-50 dark:group-hover:text-indigo-400">A-Level UCAS Points Guide</h3>
+                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-indigo-600 dark:text-zinc-50 dark:group-hover:text-indigo-400">A-Level Guide</h3>
                 <p className="mt-1 text-xs leading-6 text-zinc-600 dark:text-zinc-400">A* through E exact A-Level and AS half-scale values with grade-combination totals.</p>
               </Link>
               <Link
@@ -410,7 +410,7 @@ export default function BtecUcasPointsPage() {
                 className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
               >
                 <IconScottish size={24} className="text-amber-600 dark:text-amber-400" />
-                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-amber-600 dark:text-zinc-50 dark:group-hover:text-amber-400">Scottish Highers &amp; Adv Higher Guide</h3>
+                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-amber-600 dark:text-zinc-50 dark:group-hover:text-amber-400">Scottish Highers Guide</h3>
                 <p className="mt-1 text-xs leading-6 text-zinc-600 dark:text-zinc-400">Full Band-1 and Band-2 split for Higher and Advanced Higher grades A through D.</p>
               </Link>
               <Link
@@ -418,7 +418,7 @@ export default function BtecUcasPointsPage() {
                 className="group flex flex-col rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
               >
                 <IconTable size={24} className="text-violet-600 dark:text-violet-400" />
-                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-violet-600 dark:text-zinc-50 dark:group-hover:text-violet-400">Access to HE &amp; EPQ UCAS Points Guide</h3>
+                <h3 className="mt-3 text-base font-bold text-zinc-900 group-hover:text-violet-600 dark:text-zinc-50 dark:group-hover:text-violet-400">Access &amp; EPQ Guide</h3>
                 <p className="mt-1 text-xs leading-6 text-zinc-600 dark:text-zinc-400">Mature student Access Diploma D/M/P combinations plus EPQ and Welsh Bacc Tariff values.</p>
               </Link>
             </div>

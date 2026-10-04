@@ -131,10 +131,10 @@ export default function AccessibilityPage() {
               tell us. We want every user to be able to calculate their UCAS points with
               confidence. Email{" "}
               <a
-                href="mailto:hello@ucascalculator.com"
+                href="mailto:ucascalculatorucas@gmail.com"
                 className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
               >
-                hello@ucascalculator.com
+                ucascalculatorucas@gmail.com
               </a>{" "}
               with &ldquo;Accessibility Issue&rdquo; in the subject line, or use our{" "}
               <Link

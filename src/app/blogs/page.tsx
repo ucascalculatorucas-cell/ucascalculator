@@ -42,7 +42,7 @@ export default async function BlogIndexPage() {
           UCAS Blog
         </p>
         <h1 className="mt-3 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-50">
-          Tariff explainers, Clearing strategies &amp; qualification guides
+          Tariff qualification guides
         </h1>
         <p className="mt-5 text-lg leading-8 text-zinc-600 dark:text-zinc-300">
           UCASCalculator.com writes long-form, fact-checked UCAS advice — always rooted in
