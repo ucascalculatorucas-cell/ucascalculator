@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description:
     "UCASCalculator.com disclaimer — not affiliated with UCAS. All Tariff figures are 2017-reform based for 2025/26 entry; always cross-check against UCAS.com and universities.",
   metadataBase: new URL("https://ucascalculator.com"),
-  alternates: { canonical: "/disclaimer/" },
+  alternates: { canonical: "/disclaimer" },
   openGraph: {
     title: "Disclaimer & UCAS Notice | UCASCalculator.com",
     description:
       "UCASCalculator.com is independent and not affiliated with UCAS. Tariff figures 2017-reform based for 2025/26 entry — verify with UCAS.com and universities.",
-    url: "https://ucascalculator.com/disclaimer/",
+    url: "https://ucascalculator.com/disclaimer",
     siteName: "UCASCalculator.com",
     locale: "en_GB",
     type: "website",
@@ -175,7 +175,7 @@ export default function DisclaimerPage() {
               </a>{" "}
               or use the{" "}
               <Link
-                href="/contact-us/"
+                href="/contact-us"
                 className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
               >
                 Contact form
@@ -188,7 +188,7 @@ export default function DisclaimerPage() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-zinc-200 pt-6 sm:flex-row dark:border-zinc-800">
           <Link
-            href="/terms/"
+            href="/terms"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-zinc-200 px-5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-900"
           >
             ← Terms &amp; Conditions

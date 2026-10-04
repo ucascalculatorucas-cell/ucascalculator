@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description:
     "UCASCalculator.com accessibility statement — WCAG 2.2 AA commitment, known limitations, reporting accessibility issues and contact details.",
   metadataBase: new URL("https://ucascalculator.com"),
-  alternates: { canonical: "/accessibility-statement/" },
+  alternates: { canonical: "/accessibility-statement" },
   openGraph: {
     title: "Accessibility Statement | UCASCalculator.com",
     description:
       "UCASCalculator.com WCAG 2.2 AA accessibility statement, known limitations and issue reporting contact details.",
-    url: "https://ucascalculator.com/accessibility-statement/",
+    url: "https://ucascalculator.com/accessibility-statement",
     siteName: "UCASCalculator.com",
     locale: "en_GB",
     type: "website",
@@ -138,7 +138,7 @@ export default function AccessibilityPage() {
               </a>{" "}
               with &ldquo;Accessibility Issue&rdquo; in the subject line, or use our{" "}
               <Link
-                href="/contact-us/"
+                href="/contact-us"
                 className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
               >
                 Contact form
@@ -188,7 +188,7 @@ export default function AccessibilityPage() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-zinc-200 pt-6 sm:flex-row dark:border-zinc-800">
           <Link
-            href="/cookies-policy/"
+            href="/cookies-policy"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-zinc-200 px-5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-900"
           >
             ← Cookies Policy

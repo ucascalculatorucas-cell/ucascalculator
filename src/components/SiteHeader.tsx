@@ -3,8 +3,8 @@ import { IconBrandLogo } from "@/components/icons";
 
 const NAV = [
   { href: "/", label: "Home" },
-  { href: "/ucas-tariff-points-table/", label: "Tariff Table" },
-  { href: "/blogs/", label: "Blog" },
+  { href: "/ucas-tariff-points-table", label: "Tariff Table" },
+  { href: "/blogs", label: "Blog" },
 ];
 
 export function SiteHeader() {

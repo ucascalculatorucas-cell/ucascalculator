@@ -139,7 +139,7 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-zinc-200 pt-6 sm:flex-row sm:justify-between dark:border-zinc-800">
           <Link
-            href="/blogs/"
+            href="/blogs"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-zinc-200 px-5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-900"
           >
             ← Back to Blog index
@@ -165,7 +165,7 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
             {related.map((p) => (
               <li key={p._id}>
                 <Link
-                  href={`/blogs/${p.slug}/`}
+                  href={`/blogs/${p.slug}`}
                   className="group flex h-full flex-col gap-2 rounded-2xl border border-zinc-200 bg-white p-4 transition-colors hover:border-indigo-200 hover:bg-indigo-50/30 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-indigo-900/50 dark:hover:bg-indigo-950/20"
                 >
                   {p.tag ? (
@@ -198,14 +198,14 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
         <ul role="list" className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { href: "/", label: "UCAS Tariff Points Calculator" },
-            { href: "/ucas-tariff-points-table/", label: "Full UCAS Tariff Table" },
-            { href: "/a-level-ucas-points/", label: "A-Level Tariff Guide" },
-            { href: "/btec-ucas-points/", label: "BTEC Tariff Guide" },
-            { href: "/ib-ucas-points/", label: "IB Tariff Guide" },
-            { href: "/t-level-ucas-points/", label: "T-Level Tariff Guide" },
-            { href: "/scottish-highers-ucas-points/", label: "Scottish Highers Guide" },
-            { href: "/access-epq-ucas-points/", label: "Access & EPQ Guide" },
-            { href: "/about-us/", label: "About UCASCalculator.com" },
+            { href: "/ucas-tariff-points-table", label: "Full UCAS Tariff Table" },
+            { href: "/a-level-ucas-points", label: "A-Level Tariff Guide" },
+            { href: "/btec-ucas-points", label: "BTEC Tariff Guide" },
+            { href: "/ib-ucas-points", label: "IB Tariff Guide" },
+            { href: "/t-level-ucas-points", label: "T-Level Tariff Guide" },
+            { href: "/scottish-highers-ucas-points", label: "Scottish Highers Guide" },
+            { href: "/access-epq-ucas-points", label: "Access & EPQ Guide" },
+            { href: "/about-us", label: "About UCASCalculator.com" },
           ].map((l) => (
             <li key={l.href}>
               <Link

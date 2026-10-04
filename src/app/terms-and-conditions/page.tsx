@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: {
-    canonical: "/terms-and-conditions/",
+    canonical: "/terms-and-conditions",
   },
   openGraph: {
     title: "Terms and Conditions | UCASCalculator.com",
     description:
       "Full terms and conditions for using UCASCalculator.com, including the UCAS Tariff calculator accuracy disclaimer, intellectual property notice, user conduct, liability and governing law.",
-    url: "https://ucascalculator.com/terms-and-conditions/",
+    url: "https://ucascalculator.com/terms-and-conditions",
     type: "website",
     locale: "en_GB",
     siteName: "UCASCalculator.com",
@@ -458,7 +458,7 @@ export default function TermsPage() {
                     Contact form
                   </div>
                   <Link
-                    href="/contact-us/"
+                    href="/contact-us"
                     className="mt-1 inline-block text-base font-semibold text-indigo-600 underline-offset-4 hover:underline dark:text-indigo-400"
                   >
                     Visit the Contact page &rarr;

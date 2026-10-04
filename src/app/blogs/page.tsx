@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description:
     "UCASCalculator.com blog — UCAS Tariff explainers, Clearing 2025/26 strategies, Results Day checklists, BTEC/T-Level/IB deep-dives and grade-equivalence articles.",
   metadataBase: new URL("https://ucascalculator.com"),
-  alternates: { canonical: "/blogs/" },
+  alternates: { canonical: "/blogs" },
   openGraph: {
     title: "UCAS Blog | Tariff Tips, Results Day & Clearing Guides",
     description:
       "UCASCalculator.com blog — Tariff explainers, Clearing 2025/26 strategies, Results Day checklists, BTEC/T-Level/IB deep-dives and grade-equivalence articles.",
-    url: "https://ucascalculator.com/blogs/",
+    url: "https://ucascalculator.com/blogs",
     siteName: "UCASCalculator.com",
     locale: "en_GB",
     type: "website",
@@ -87,7 +87,7 @@ export default async function BlogIndexPage() {
               </div>
               <h2 className="mt-4 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
                 <Link
-                  href={`/blogs/${p.slug}/`}
+                  href={`/blogs/${p.slug}`}
                   className="before:absolute before:inset-0 before:content-[''] hover:text-indigo-600 dark:hover:text-indigo-400"
                 >
                   {p.title}
@@ -105,7 +105,7 @@ export default async function BlogIndexPage() {
                   <span />
                 )}
                 <Link
-                  href={`/blogs/${p.slug}/`}
+                  href={`/blogs/${p.slug}`}
                   className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 dark:text-indigo-400"
                   aria-label={`Read ${p.title}`}
                 >

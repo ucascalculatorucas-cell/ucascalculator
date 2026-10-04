@@ -6,12 +6,12 @@ export const metadata: Metadata = {
   description:
     "UCASCalculator.com cookies policy — explains GA4 analytics, essential vs optional cookies, duration, consent and how to disable cookies in your browser.",
   metadataBase: new URL("https://ucascalculator.com"),
-  alternates: { canonical: "/cookies-policy/" },
+  alternates: { canonical: "/cookies-policy" },
   openGraph: {
     title: "Cookies Policy | UCASCalculator.com",
     description:
       "UCASCalculator.com cookies policy — explains GA4 analytics, essential vs optional cookies, duration, consent and how to disable cookies.",
-    url: "https://ucascalculator.com/cookies-policy/",
+    url: "https://ucascalculator.com/cookies-policy",
     siteName: "UCASCalculator.com",
     locale: "en_GB",
     type: "website",
@@ -203,7 +203,7 @@ export default function CookiesPolicyPage() {
               </a>{" "}
               or use the{" "}
               <Link
-                href="/contact-us/"
+                href="/contact-us"
                 className="text-indigo-600 underline underline-offset-2 dark:text-indigo-400"
               >
                 Contact form
@@ -215,7 +215,7 @@ export default function CookiesPolicyPage() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-zinc-200 pt-6 sm:flex-row dark:border-zinc-800">
           <Link
-            href="/privacy-policy/"
+            href="/privacy-policy"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-zinc-200 px-5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-900"
           >
             ← Read Privacy Policy

@@ -852,7 +852,7 @@ export default function Home() {
                   </p>
                 </div>
                 <Link
-                  href="/blogs/"
+                  href="/blogs"
                   className="inline-flex h-10 items-center gap-1 rounded-xl border border-zinc-200 bg-white px-4 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-50 dark:hover:bg-zinc-800"
                 >
                   View all posts →
@@ -923,7 +923,7 @@ export default function Home() {
                 ].map((post) => (
                   <Link
                     key={post.slug}
-                    href={`/blogs/${post.slug}/`}
+                    href={`/blogs/${post.slug}`}
                     className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 sm:p-5 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
                   >
                     <div
@@ -966,7 +966,7 @@ export default function Home() {
               </p>
               <div className="mt-5 grid gap-3 sm:mt-6 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 <Link
-                  href="/ucas-tariff-points-table/"
+                  href="/ucas-tariff-points-table"
                   className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 sm:p-5 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
                 >
                   <div
@@ -990,7 +990,7 @@ export default function Home() {
                 </Link>
 
                 <Link
-                  href="/about-us/"
+                  href="/about-us"
                   className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 sm:p-5 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
                 >
                   <div
@@ -1014,7 +1014,7 @@ export default function Home() {
                 </Link>
 
                 <Link
-                  href="/contact-us/"
+                  href="/contact-us"
                   className="group relative flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-500/5 sm:p-5 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-indigo-900/60"
                 >
                   <div

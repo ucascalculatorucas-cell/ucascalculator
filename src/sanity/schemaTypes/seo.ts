@@ -76,13 +76,13 @@ export const seoType = defineType({
       type: "url",
       fieldset: "canonical",
       description:
-        "Full URL for this post. Leave blank for default: https://ucascalculator.com/blogs/{slug}/",
+        "Full URL for this post (no trailing slash). Leave blank for default: https://ucascalculator.com/blogs/{slug}",
       validation: (rule) =>
         rule.uri({
           allowRelative: false,
           scheme: ["https", "http"],
         }),
-      placeholder: "https://ucascalculator.com/blogs/your-post-slug/",
+      placeholder: "https://ucascalculator.com/blogs/your-post-slug",
     }),
     defineField({
       name: "ogTitle",

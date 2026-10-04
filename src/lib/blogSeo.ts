@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import { absoluteUrl, SITE_ORIGIN } from "@/lib/site";
 import type { SanityImage, SanityPost } from "@/sanity/types";
 import { urlFor } from "@/sanity/lib/image";
 
-const SITE = "https://ucascalculator.com";
 const SITE_NAME = "UCASCalculator.com";
 
 function imageUrl(image: SanityImage | undefined, width = 1200, height = 630) {
@@ -19,8 +19,9 @@ export function buildPostMetadata(post: SanityPost, slug: string): Metadata {
   const metaTitle = seo?.metaTitle?.trim() || post.title;
   const metaDescription =
     seo?.metaDescription?.trim() || post.excerpt || undefined;
-  const canonical =
-    seo?.canonicalUrl?.trim() || `${SITE}/blogs/${slug}/`;
+  const canonical = seo?.canonicalUrl?.trim()
+    ? absoluteUrl(seo.canonicalUrl.trim())
+    : absoluteUrl(`/blogs/${slug}`);
 
   const ogTitle = seo?.ogTitle?.trim() || metaTitle;
   const ogDescription =
@@ -56,7 +57,7 @@ export function buildPostMetadata(post: SanityPost, slug: string): Metadata {
       : [{ name: SITE_NAME }],
     creator: authorNames[0] || SITE_NAME,
     publisher: SITE_NAME,
-    metadataBase: new URL(SITE),
+    metadataBase: new URL(SITE_ORIGIN),
     alternates: { canonical },
     robots: {
       index: robotsIndex,
@@ -99,8 +100,9 @@ export function buildPostMetadata(post: SanityPost, slug: string): Metadata {
 
 export function buildArticleJsonLd(post: SanityPost, slug: string) {
   const seo = post.seo;
-  const canonical =
-    seo?.canonicalUrl?.trim() || `${SITE}/blogs/${slug}/`;
+  const canonical = seo?.canonicalUrl?.trim()
+    ? absoluteUrl(seo.canonicalUrl.trim())
+    : absoluteUrl(`/blogs/${slug}`);
   const image =
     imageUrl(seo?.ogImage) || imageUrl(post.mainImage) || undefined;
 
@@ -127,7 +129,7 @@ export function buildArticleJsonLd(post: SanityPost, slug: string) {
           {
             "@type": "Organization",
             name: SITE_NAME,
-            url: SITE,
+            url: SITE_ORIGIN,
           },
         ];
 
@@ -143,7 +145,7 @@ export function buildArticleJsonLd(post: SanityPost, slug: string) {
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE,
+      url: SITE_ORIGIN,
     },
     mainEntityOfPage: {
       "@type": "WebPage",

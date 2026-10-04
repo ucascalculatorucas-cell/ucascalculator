@@ -38,7 +38,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/ucas-tariff-points-table/"
+                  href="/ucas-tariff-points-table"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Full UCAS Tariff Table (2025/26)
@@ -46,7 +46,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/a-level-ucas-points/"
+                  href="/a-level-ucas-points"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   A-Level Tariff Points
@@ -54,7 +54,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/btec-ucas-points/"
+                  href="/btec-ucas-points"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   BTEC Tariff Points
@@ -62,7 +62,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/ib-ucas-points/"
+                  href="/ib-ucas-points"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   IB Tariff Points
@@ -70,7 +70,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/t-level-ucas-points/"
+                  href="/t-level-ucas-points"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   T-Level Tariff Points
@@ -78,7 +78,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/scottish-highers-ucas-points/"
+                  href="/scottish-highers-ucas-points"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Scottish Highers Tariff
@@ -86,7 +86,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/access-epq-ucas-points/"
+                  href="/access-epq-ucas-points"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Access to HE &amp; EPQ Tariff
@@ -100,7 +100,7 @@ export function SiteFooter() {
             <ul role="list" className="mt-4 space-y-2">
               <li>
                 <Link
-                  href="/blogs/"
+                  href="/blogs"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   UCAS Advice Blog
@@ -108,7 +108,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/ucas-tariff-points-table/"
+                  href="/ucas-tariff-points-table"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Full UCAS Tariff Table 2025/2026
@@ -117,7 +117,7 @@ export function SiteFooter() {
               
               <li>
                 <Link
-                  href="/about-us/"
+                  href="/about-us"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   About Us
@@ -125,7 +125,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/contact-us/"
+                  href="/contact-us"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Contact Us
@@ -147,7 +147,7 @@ export function SiteFooter() {
             <ul role="list" className="mt-4 space-y-2">
               <li>
                 <Link
-                  href="/privacy-policy/"
+                  href="/privacy-policy"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Privacy Policy
@@ -155,7 +155,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/terms-and-conditions/"
+                  href="/terms-and-conditions"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Terms &amp; Conditions
@@ -163,7 +163,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/cookies-policy/"
+                  href="/cookies-policy"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Cookies Policy
@@ -171,7 +171,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/accessibility-statement/"
+                  href="/accessibility-statement"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Accessibility Statement
@@ -179,7 +179,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
-                  href="/disclaimer/"
+                  href="/disclaimer"
                   className="text-sm text-zinc-600 transition-colors hover:text-indigo-600 dark:text-zinc-400 dark:hover:text-indigo-400"
                 >
                   Disclaimer &amp; UCAS Notice

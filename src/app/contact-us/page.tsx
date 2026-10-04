@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Get in touch with UCASCalculator.com. Report tariff errors, ask general questions, make business enquiries, or submit GDPR privacy requests. Full address and email details.",
   alternates: {
-    canonical: "/contact-us/",
+    canonical: "/contact-us",
   },
   openGraph: {
     title: "Contact Us | UCASCalculator.com",
     description:
       "Contact UCASCalculator.com for general questions, tariff error reports, business enquiries and GDPR privacy requests. We aim to respond within 3 working days.",
-    url: "https://ucascalculator.com/contact-us/",
+    url: "https://ucascalculator.com/contact-us",
     siteName: "UCASCalculator.com",
     locale: "en_GB",
     type: "website",
