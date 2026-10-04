@@ -160,10 +160,12 @@ export const postType = defineType({
     }),
     defineField({
       name: "seo",
-      title: "SEO",
+      title: "SEO settings",
       type: "seo",
       group: "seo",
-      options: { collapsible: true, collapsed: false },
+      description:
+        "Canonical, meta title/description, and social meta title/description for sharing.",
+      options: { collapsible: false },
     }),
   ],
   preview: {

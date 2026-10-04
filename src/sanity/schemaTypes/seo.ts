@@ -4,19 +4,44 @@ export const seoType = defineType({
   name: "seo",
   title: "SEO",
   type: "object",
-  groups: [
-    { name: "basic", title: "Basic", default: true },
-    { name: "social", title: "Social / Open Graph" },
-    { name: "advanced", title: "Advanced" },
+  options: {
+    collapsible: false,
+  },
+  fieldsets: [
+    {
+      name: "search",
+      title: "Search engines (Google)",
+      options: { collapsible: false },
+    },
+    {
+      name: "canonical",
+      title: "Canonical",
+      options: { collapsible: false },
+    },
+    {
+      name: "social",
+      title: "Social meta (Facebook, LinkedIn, WhatsApp, X)",
+      options: { collapsible: false },
+    },
+    {
+      name: "twitter",
+      title: "Twitter / X overrides (optional)",
+      options: { collapsible: true, collapsed: true },
+    },
+    {
+      name: "robots",
+      title: "Robots",
+      options: { collapsible: true, collapsed: true },
+    },
   ],
   fields: [
     defineField({
       name: "metaTitle",
       title: "Meta title",
       type: "string",
-      group: "basic",
+      fieldset: "search",
       description:
-        "Browser tab / Google title. Leave blank to use the post title. Ideal about 50-60 chars.",
+        "Google / browser title. Leave blank to use the post title. Ideal about 50-60 chars.",
       validation: (rule) =>
         rule.max(70).warning("Keep under 60 characters when possible"),
     }),
@@ -25,7 +50,7 @@ export const seoType = defineType({
       title: "Meta description",
       type: "text",
       rows: 3,
-      group: "basic",
+      fieldset: "search",
       description:
         "Google snippet text. Leave blank to use the excerpt. Ideal about 150-160 chars.",
       validation: (rule) =>
@@ -35,14 +60,13 @@ export const seoType = defineType({
       name: "focusKeyword",
       title: "Focus keyword",
       type: "string",
-      group: "basic",
-      description: "Primary keyword this article targets",
+      fieldset: "search",
     }),
     defineField({
       name: "keywords",
       title: "Secondary keywords",
       type: "array",
-      group: "basic",
+      fieldset: "search",
       of: [{ type: "string" }],
       options: { layout: "tags" },
     }),
@@ -50,53 +74,41 @@ export const seoType = defineType({
       name: "canonicalUrl",
       title: "Canonical URL",
       type: "url",
-      group: "advanced",
+      fieldset: "canonical",
       description:
-        "Optional override. Leave blank to use https://ucascalculator.com/blogs/{slug}/",
+        "Full URL for this post. Leave blank for default: https://ucascalculator.com/blogs/{slug}/",
       validation: (rule) =>
         rule.uri({
           allowRelative: false,
           scheme: ["https", "http"],
         }),
-    }),
-    defineField({
-      name: "noIndex",
-      title: "No index",
-      type: "boolean",
-      group: "advanced",
-      description: "Hide this post from search engines",
-      initialValue: false,
-    }),
-    defineField({
-      name: "noFollow",
-      title: "No follow",
-      type: "boolean",
-      group: "advanced",
-      description: "Ask crawlers not to follow links on this page",
-      initialValue: false,
+      placeholder: "https://ucascalculator.com/blogs/your-post-slug/",
     }),
     defineField({
       name: "ogTitle",
-      title: "OG / social title",
+      title: "Social meta title",
       type: "string",
-      group: "social",
-      description: "Facebook, LinkedIn, etc. Falls back to meta title, then post title",
+      fieldset: "social",
+      description:
+        "Title when shared on Facebook, LinkedIn, WhatsApp, etc. Falls back to Meta title.",
       validation: (rule) => rule.max(95),
     }),
     defineField({
       name: "ogDescription",
-      title: "OG / social description",
+      title: "Social meta description",
       type: "text",
       rows: 3,
-      group: "social",
+      fieldset: "social",
+      description:
+        "Description when shared on social apps. Falls back to Meta description.",
       validation: (rule) => rule.max(200),
     }),
     defineField({
       name: "ogImage",
-      title: "OG / social image",
+      title: "Social share image",
       type: "image",
-      group: "social",
-      description: "Recommended 1200x630. Falls back to main image",
+      fieldset: "social",
+      description: "Recommended 1200x630. Falls back to main image.",
       options: { hotspot: true },
       fields: [
         defineField({
@@ -110,7 +122,8 @@ export const seoType = defineType({
       name: "twitterTitle",
       title: "Twitter / X title",
       type: "string",
-      group: "social",
+      fieldset: "twitter",
+      description: "Optional. Falls back to Social meta title.",
       validation: (rule) => rule.max(70),
     }),
     defineField({
@@ -118,15 +131,16 @@ export const seoType = defineType({
       title: "Twitter / X description",
       type: "text",
       rows: 2,
-      group: "social",
+      fieldset: "twitter",
+      description: "Optional. Falls back to Social meta description.",
       validation: (rule) => rule.max(200),
     }),
     defineField({
       name: "twitterImage",
       title: "Twitter / X image",
       type: "image",
-      group: "social",
-      description: "Falls back to OG image, then main image",
+      fieldset: "twitter",
+      description: "Optional. Falls back to Social share image.",
       options: { hotspot: true },
       fields: [
         defineField({
@@ -135,6 +149,22 @@ export const seoType = defineType({
           type: "string",
         }),
       ],
+    }),
+    defineField({
+      name: "noIndex",
+      title: "No index",
+      type: "boolean",
+      fieldset: "robots",
+      description: "Hide this post from search engines",
+      initialValue: false,
+    }),
+    defineField({
+      name: "noFollow",
+      title: "No follow",
+      type: "boolean",
+      fieldset: "robots",
+      description: "Ask crawlers not to follow links on this page",
+      initialValue: false,
     }),
   ],
 });
