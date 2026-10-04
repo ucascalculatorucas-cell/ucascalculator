@@ -1,7 +1,20 @@
+# UCASCalculator.com — https://ucascalculator.com
+# Allow search engine crawlers
+
 User-agent: *
 Allow: /
-Disallow: /api/
 
+# App / CMS paths that should not be indexed as content
+Disallow: /api/
+Disallow: /studio/
+Disallow: /studio
+
+# Block thin/internal query-style URLs if they appear
+Disallow: /search/
+Disallow: /*?*s=
+Disallow: /*?*preview=
+
+# AI / LLM crawlers
 User-agent: GPTBot
 Allow: /
 
