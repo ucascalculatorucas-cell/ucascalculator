@@ -1,4 +1,4 @@
-# UCASCalculator.com — https://ucascalculator.com
+# UCASCalculator.com - https://ucascalculator.com
 # Allow search engine crawlers
 
 User-agent: *
