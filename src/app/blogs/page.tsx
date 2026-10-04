@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { client } from "@/sanity/lib/client";
+import { POSTS_QUERY } from "@/sanity/lib/queries";
+import type { SanityPostListItem } from "@/sanity/types";
+import { formatBlogDate } from "@/lib/formatDate";
 
 export const metadata: Metadata = {
   title: "UCAS Blog | Tariff Tips, Results Day & Clearing Guides",
@@ -24,64 +28,11 @@ export const metadata: Metadata = {
   },
 };
 
-const POSTS = [
-  {
-    slug: "ucas-tariff-2025-26-what-changed",
-    date: "14 Aug 2026",
-    title: "UCAS Tariff 2025/26: What Actually Changed vs Last Cycle",
-    excerpt:
-      "Complete UCAS Tariff roundup for 2025/26 entry — new T-Level Core scale, Scottish banding granularity, BTEC RQF crosswalk and what A-Level resit rules mean for your points.",
-    tag: "Tariff News",
-    readTime: "6 min",
-  },
-  {
-    slug: "clearing-checklist-2026",
-    date: "10 Aug 2026",
-    title: "Results Day & Clearing 2026: 10-Step Survival Checklist",
-    excerpt:
-      "A proven 10-step plan for Results Day morning: UCAS Hub prep, Tariff sum before 08:00, grade boundary screenshots, university phone scripts and the exact moment to call Clearing hotlines.",
-    tag: "Results Day",
-    readTime: "5 min",
-  },
-  {
-    slug: "btec-vs-t-level-ucas-points",
-    date: "2 Aug 2026",
-    title: "BTEC Extended Diploma vs T-Level: UCAS Points Side-by-Side",
-    excerpt:
-      "BTEC Extended Diploma D*D*D* vs T-Level Distinction* — both worth 168 UCAS points on paper, but which one do Russell Group unis actually prefer? Structural differences, industry placement rules and real offer data compared.",
-    tag: "Qualification Guides",
-    readTime: "8 min",
-  },
-  {
-    slug: "ib-tariff-40-42-43-how-many-points",
-    date: "25 Jul 2026",
-    title: "IB 38 / 40 / 42 / 43+ — How Many UCAS Tariff Points Each Profile Actually Gives You",
-    excerpt:
-      "HL/SL split matters more than the raw total. Detailed breakdown mapping the most common IB predicted profiles to exact 2017-reform Tariff values plus real UK university offer comparisons.",
-    tag: "IB Deep-Dive",
-    readTime: "7 min",
-  },
-  {
-    slug: "epq-ucas-points-russell-group",
-    date: "15 Jul 2026",
-    title: "EPQ A* = 28 Points, but Does Your Russell Group Course Actually Count It?",
-    excerpt:
-      "EPQ Tariff values A* through E, which RG medical schools explicitly exclude it, which LSE + Oxbridge colleges use EPQ for reduced offers and whether resitting EPQ is ever worth it.",
-    tag: "Subject Tips",
-    readTime: "6 min",
-  },
-  {
-    slug: "scottish-highers-band1-band2-tariff",
-    date: "8 Jul 2026",
-    title: "Scottish Highers: Band-1 vs Band-2 — the 3-Point Tariff Gap That Changes Offers",
-    excerpt:
-      "Scottish Highers split into Band-1 and Band-2 Tariff values inside grades A, B, C is easily missed. Which unis can see the band detail on your UCAS form and how to maximise predicted points when you're borderline Band-1.",
-    tag: "Scottish",
-    readTime: "5 min",
-  },
-];
+export const revalidate = 60;
 
-export default function BlogIndexPage() {
+export default async function BlogIndexPage() {
+  const posts = await client.fetch<SanityPostListItem[]>(POSTS_QUERY);
+
   return (
     <main className="relative mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
       <header className="max-w-3xl">
@@ -105,41 +56,56 @@ export default function BlogIndexPage() {
         <h2 id="posts-heading" className="sr-only">
           Latest blog posts
         </h2>
-        {POSTS.map((p) => (
-          <article
-            key={p.slug}
-            className="group flex flex-col rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-950"
-          >
-            <div className="flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
-              <span className="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-1 font-medium text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
-                {p.tag}
-              </span>
-              <span>
-                {p.date} · {p.readTime}
-              </span>
-            </div>
-            <h2 className="mt-4 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
-              <Link
-                href={`/blogs/${p.slug}/`}
-                className="before:absolute before:inset-0 before:content-[''] hover:text-indigo-600 dark:hover:text-indigo-400"
-              >
-                {p.title}
-              </Link>
-            </h2>
-            <p className="mt-3 flex-1 text-sm leading-6 text-zinc-600 dark:text-zinc-300">
-              {p.excerpt}
-            </p>
-            <div className="mt-5 border-t border-zinc-100 pt-4 text-sm font-medium text-indigo-600 dark:border-zinc-800 dark:text-indigo-400">
-              <Link
-                href={`/blogs/${p.slug}/`}
-                className="inline-flex items-center gap-1"
-                aria-label={`Read ${p.title}`}
-              >
-                Read article →
-              </Link>
-            </div>
-          </article>
-        ))}
+        {posts.length === 0 ? (
+          <p className="col-span-full rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-8 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">
+            No blog posts published yet. Add posts in{" "}
+            <Link href="/studio" className="font-medium text-indigo-600 underline dark:text-indigo-400">
+              Sanity Studio
+            </Link>
+            .
+          </p>
+        ) : (
+          posts.map((p) => (
+            <article
+              key={p._id}
+              className="group relative flex flex-col rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-950"
+            >
+              <div className="flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400">
+                {p.tag ? (
+                  <span className="inline-flex items-center rounded-full bg-indigo-50 px-2.5 py-1 font-medium text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300">
+                    {p.tag}
+                  </span>
+                ) : (
+                  <span />
+                )}
+                <span>
+                  {formatBlogDate(p.publishedAt)}
+                  {p.readTime ? ` · ${p.readTime}` : ""}
+                </span>
+              </div>
+              <h2 className="mt-4 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-50">
+                <Link
+                  href={`/blogs/${p.slug}/`}
+                  className="before:absolute before:inset-0 before:content-[''] hover:text-indigo-600 dark:hover:text-indigo-400"
+                >
+                  {p.title}
+                </Link>
+              </h2>
+              <p className="mt-3 flex-1 text-sm leading-6 text-zinc-600 dark:text-zinc-300">
+                {p.excerpt}
+              </p>
+              <div className="mt-5 border-t border-zinc-100 pt-4 text-sm font-medium text-indigo-600 dark:border-zinc-800 dark:text-indigo-400">
+                <Link
+                  href={`/blogs/${p.slug}/`}
+                  className="inline-flex items-center gap-1"
+                  aria-label={`Read ${p.title}`}
+                >
+                  Read article →
+                </Link>
+              </div>
+            </article>
+          ))
+        )}
       </section>
 
       <section className="mt-16 rounded-3xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-violet-50 p-8 sm:p-10 dark:border-indigo-900/40 dark:from-indigo-950/40 dark:to-violet-950/30">
