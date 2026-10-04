@@ -35,8 +35,8 @@ export const metadata: Metadata = {
       "Terms of service, accuracy disclaimer and legal notice for UCASCalculator.com.",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     "max-image-preview": "large",
     "max-snippet": -1,
     "max-video-preview": -1,

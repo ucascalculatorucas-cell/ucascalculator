@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description:
       "A-Level A* to E exact points, AS half-scale, BTEC and IB equivalence visual.",
   },
-  robots: { index: false, follow: false, "max-image-preview": "large", "max-snippet": -1 },
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 
 const DATE_PUBLISHED = "2026-06-01";

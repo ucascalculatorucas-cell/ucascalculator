@@ -58,8 +58,8 @@ export const metadata: Metadata = {
       "Searchable, sortable complete UCAS Tariff table. A-Level, BTEC, IB, Scottish, T-Level, Access, EPQ and more.",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     "max-image-preview": "large",
     "max-snippet": -1,
     "max-video-preview": -1,

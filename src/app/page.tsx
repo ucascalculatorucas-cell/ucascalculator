@@ -68,8 +68,8 @@ export const metadata: Metadata = {
       "Official UCAS 2017-reform points calculator for A-Level, BTEC, IB, Scotland, T-Level, Access & EPQ.",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     "max-image-preview": "large",
     "max-snippet": -1,
     "max-video-preview": -1,

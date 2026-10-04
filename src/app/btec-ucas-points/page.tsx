@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "BTEC UCAS Points — 2025/2026 Tariff Tables",
     description: "Extended Diploma / Diploma / Subsidiary / Certificate BTEC sizes and A-Level equivalence.",
   },
-  robots: { index: false, follow: false, "max-image-preview": "large", "max-snippet": -1 },
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 
 const DATE_PUBLISHED = "2026-06-01";

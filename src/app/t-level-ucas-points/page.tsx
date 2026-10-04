@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description:
       "Official 2025/26 UCAS Tariff values for T-Levels with three-A-Level-size equivalence chart and real university acceptance FAQ.",
   },
-  robots: { index: false, follow: false, "max-image-preview": "large", "max-snippet": -1 },
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 
 const TLEVEL_ROWS = [

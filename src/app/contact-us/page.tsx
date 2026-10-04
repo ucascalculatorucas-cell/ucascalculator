@@ -25,8 +25,8 @@ export const metadata: Metadata = {
       "Contact details for UCASCalculator.com. Email hello@ucascalculator.com or dpo@ucascalculator.com for privacy requests.",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     "max-image-preview": "large",
     "max-snippet": -1,
     "max-video-preview": -1,

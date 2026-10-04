@@ -55,8 +55,8 @@ export const metadata: Metadata = {
       "Access 45D = 144 pts, EPQ A* = 28 pts. Full Tariff lookup + counting rules FAQ.",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     "max-image-preview": "large",
     "max-snippet": -1,
     "max-video-preview": -1,

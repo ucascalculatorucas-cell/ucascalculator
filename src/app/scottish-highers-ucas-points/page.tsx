@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Scottish Highers UCAS Points Tables",
     description: "Higher and Advanced Higher Band-1 / Band-2 split tables.",
   },
-  robots: { index: false, follow: false, "max-image-preview": "large", "max-snippet": -1 },
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 
 const DATE_PUBLISHED = "2026-06-01";

@@ -29,8 +29,8 @@ export const metadata: Metadata = {
       "Full privacy notice: data we collect, cookies (GA4), GDPR/CCPA rights and how to contact our DPO.",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     "max-image-preview": "large",
     "max-snippet": -1,
     "max-video-preview": -1,

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "IB UCAS Points — HL, SL, Core Bonus Tables",
     description: "Higher Level, Standard Level and EE+TOK core bonus Tariff values for IB Diploma 2025/26.",
   },
-  robots: { index: false, follow: false, "max-image-preview": "large", "max-snippet": -1 },
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 
 const DATE_PUBLISHED = "2026-06-01";

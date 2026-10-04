@@ -52,8 +52,8 @@ export const metadata: Metadata = {
       "Free UCAS Tariff calculator for A-Level, BTEC, IB, Scottish, T-Levels, Access & EPQ.",
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     "max-image-preview": "large",
     "max-snippet": -1,
     "max-video-preview": -1,
