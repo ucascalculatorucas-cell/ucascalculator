@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Script from "next/script";
 import Link from "next/link";
 import { IconALevel, IconCalculator, IconTable, IconBTEC, IconIB } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title:
-    "A-Level UCAS Points 2025/2026 | Grade-by-Grade Tariff Table & Equivalences",
+  title: "A-Level UCAS Points 2025/26 | Full Grade Lookup Table",
   description:
-    "A-Level UCAS points grade-by-grade Tariff table for 2025 and 2026 entry. A* to E exact values, AS-Level half-scale, A-Level to BTEC and IB equivalence, 2017 reform scale rules and common counting gotchas.",
+    "Look up A-Level UCAS Tariff points from A* to E, AS-Level values, grade equivalences and counting rules for 2025 and 2026 university entry. Free official table.",
   keywords: [
     "a level ucas points",
     "a level ucas points 2025",
@@ -23,21 +23,12 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/a-level-ucas-points" },
-  openGraph: {
-    title: "A-Level UCAS Points — Grade-by-Grade 2025/2026 Tariff Table",
+  ...socialMetadata({
+    title: "A-Level UCAS Points 2025/26 | Full Grade Lookup Table",
     description:
-      "Exact A* to E A-Level UCAS points values, AS half-scale, BTEC / IB grade equivalence visual, resit and double-count rules for the 2017 reform scale used in 2025/26.",
-    url: "https://ucascalculator.com/a-level-ucas-points",
-    type: "website",
-    locale: "en_GB",
-    siteName: "UCASCalculator.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "A-Level UCAS Points — 2025/2026 Tariff Table",
-    description:
-      "A-Level A* to E exact points, AS half-scale, BTEC and IB equivalence visual.",
-  },
+      "Look up A-Level UCAS Tariff points from A* to E, AS-Level values, grade equivalences and counting rules for 2025 and 2026 university entry. Free official table.",
+    path: "/a-level-ucas-points",
+  }),
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 

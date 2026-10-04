@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Script from "next/script";
 import Link from "next/link";
 import { IconIB, IconCalculator, IconTable, IconALevel, IconBTEC } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title:
-    "IB UCAS Points 2025/2026 | Higher Level, Standard Level, Extended Essay + TOK Core Bonus",
+  title: "IB UCAS Points 2025/26 | HL, SL and Core Bonus Table",
   description:
-    "IB UCAS Tariff points grade-by-grade for IB Diploma Higher Level (7-4) and Standard Level (7-3), plus the Extended Essay + Theory of Knowledge 0-3 core bonus. A-Level equivalence chart, subject rules and 2025/26 UCAS tariff scale.",
+    "IB Diploma UCAS Tariff for Higher Level and Standard Level grades, plus Extended Essay and TOK core bonus, with A-Level equivalence for 2025/26 entry.",
   keywords: [
     "ib ucas points",
     "ib higher level ucas points",
@@ -23,20 +23,12 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/ib-ucas-points" },
-  openGraph: {
-    title: "IB UCAS Points 2025/2026 — HL, SL, EE + TOK Core Bonus",
+  ...socialMetadata({
+    title: "IB UCAS Points 2025/26 | HL, SL and Core Bonus Table",
     description:
-      "Higher Level 7 (56 pts = A-Level A*) down to SL 3 (12 pts). IB Core bonus, A-Level equivalence visual and 0–3 Theory of Knowledge + EE bonus.",
-    url: "https://ucascalculator.com/ib-ucas-points",
-    type: "website",
-    locale: "en_GB",
-    siteName: "UCASCalculator.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "IB UCAS Points — HL, SL, Core Bonus Tables",
-    description: "Higher Level, Standard Level and EE+TOK core bonus Tariff values for IB Diploma 2025/26.",
-  },
+      "IB Diploma UCAS Tariff for Higher Level and Standard Level grades, plus Extended Essay and TOK core bonus, with A-Level equivalence for 2025/26 entry.",
+    path: "/ib-ucas-points",
+  }),
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 

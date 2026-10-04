@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE, SITE_NAME } from "@/lib/seo";
 import { absoluteUrl, SITE_ORIGIN } from "@/lib/site";
 import type { SanityImage, SanityPost } from "@/sanity/types";
 import { urlFor } from "@/sanity/lib/image";
-
-const SITE_NAME = "UCASCalculator.com";
 
 function imageUrl(image: SanityImage | undefined, width = 1200, height = 630) {
   if (!image) return undefined;
@@ -18,23 +17,34 @@ export function buildPostMetadata(post: SanityPost, slug: string): Metadata {
   const seo = post.seo;
   const metaTitle = seo?.metaTitle?.trim() || post.title;
   const metaDescription =
-    seo?.metaDescription?.trim() || post.excerpt || undefined;
+    seo?.metaDescription?.trim() ||
+    post.excerpt ||
+    "UCAS advice and Tariff guidance for students, parents and advisers.";
   const canonical = seo?.canonicalUrl?.trim()
     ? absoluteUrl(seo.canonicalUrl.trim())
     : absoluteUrl(`/blogs/${slug}`);
 
   const ogTitle = seo?.ogTitle?.trim() || metaTitle;
   const ogDescription =
-    seo?.ogDescription?.trim() || metaDescription || undefined;
-  const ogImage =
-    imageUrl(seo?.ogImage) || imageUrl(post.mainImage) || undefined;
+    seo?.ogDescription?.trim() || metaDescription;
+  const customOgImage = imageUrl(seo?.ogImage) || imageUrl(post.mainImage);
+  const ogImages = customOgImage
+    ? [
+        {
+          url: customOgImage,
+          width: 1200,
+          height: 630,
+          alt: seo?.ogImage?.alt || post.mainImage?.alt || post.title,
+        },
+      ]
+    : [DEFAULT_OG_IMAGE];
 
   const twitterTitle =
     seo?.twitterTitle?.trim() || ogTitle || metaTitle;
   const twitterDescription =
     seo?.twitterDescription?.trim() || ogDescription || metaDescription;
   const twitterImage =
-    imageUrl(seo?.twitterImage) || ogImage || undefined;
+    imageUrl(seo?.twitterImage) || customOgImage || DEFAULT_OG_IMAGE.url;
 
   const authorNames =
     post.authors?.map((a) => a.name).filter(Boolean) ?? [];
@@ -78,22 +88,13 @@ export function buildPostMetadata(post: SanityPost, slug: string): Metadata {
       modifiedTime: post.updatedAt || post.publishedAt,
       authors: authorNames.length ? authorNames : [SITE_NAME],
       tags: post.tag ? [post.tag] : undefined,
-      images: ogImage
-        ? [
-            {
-              url: ogImage,
-              width: 1200,
-              height: 630,
-              alt: seo?.ogImage?.alt || post.mainImage?.alt || post.title,
-            },
-          ]
-        : undefined,
+      images: ogImages,
     },
     twitter: {
       card: "summary_large_image",
       title: twitterTitle,
       description: twitterDescription,
-      images: twitterImage ? [twitterImage] : undefined,
+      images: [twitterImage],
     },
   };
 }
@@ -104,7 +105,9 @@ export function buildArticleJsonLd(post: SanityPost, slug: string) {
     ? absoluteUrl(seo.canonicalUrl.trim())
     : absoluteUrl(`/blogs/${slug}`);
   const image =
-    imageUrl(seo?.ogImage) || imageUrl(post.mainImage) || undefined;
+    imageUrl(seo?.ogImage) ||
+    imageUrl(post.mainImage) ||
+    DEFAULT_OG_IMAGE.url;
 
   const authors =
     post.authors && post.authors.length > 0

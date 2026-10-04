@@ -1,27 +1,19 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Accessibility Statement | UCASCalculator.com",
+  title: "Accessibility Statement | Our WCAG 2.2 AA Commitment",
   description:
-    "UCASCalculator.com accessibility statement — WCAG 2.2 AA commitment, known limitations, reporting accessibility issues and contact details.",
+    "Our WCAG 2.2 AA accessibility commitment for the UCAS Tariff calculator and guides, known limitations, and how to report barriers so we can improve the site.",
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/accessibility-statement" },
-  openGraph: {
-    title: "Accessibility Statement | UCASCalculator.com",
+  ...socialMetadata({
+    title: "Accessibility Statement | Our WCAG 2.2 AA Commitment",
     description:
-      "UCASCalculator.com WCAG 2.2 AA accessibility statement, known limitations and issue reporting contact details.",
-    url: "https://ucascalculator.com/accessibility-statement",
-    siteName: "UCASCalculator.com",
-    locale: "en_GB",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Accessibility Statement | UCASCalculator.com",
-    description:
-      "UCASCalculator.com WCAG 2.2 AA accessibility statement, known limitations and issue reporting contact details.",
-  },
+      "Our WCAG 2.2 AA accessibility commitment for the UCAS Tariff calculator and guides, known limitations, and how to report barriers so we can improve the site.",
+    path: "/accessibility-statement",
+  }),
 };
 
 const LAST_UPDATED = "21 August 2026";

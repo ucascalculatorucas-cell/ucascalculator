@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
 import { BlogAuthorCard } from "@/components/BlogAuthorCard";
 import { buildArticleJsonLd, buildPostMetadata } from "@/lib/blogSeo";
+import { socialMetadata } from "@/lib/seo";
 import { formatBlogDate } from "@/lib/formatDate";
 import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -32,11 +33,20 @@ export async function generateMetadata(
   props: BlogSlugPageProps
 ): Promise<Metadata> {
   const params = await props.params;
+  const notFoundMeta = {
+    title: "Blog Post Not Found | Browse More UCAS Advice Posts",
+    description:
+      "The UCAS advice article you requested could not be found. Browse the blog for Tariff tips, Clearing guides and Results Day checklists for 2025/26 entry.",
+    ...socialMetadata({
+      title: "Blog Post Not Found | Browse More UCAS Advice Posts",
+      description:
+        "The UCAS advice article you requested could not be found. Browse the blog for Tariff tips, Clearing guides and Results Day checklists for 2025/26 entry.",
+      path: `/blogs/${params.slug}`,
+    }),
+  };
+
   if (!isSanityConfigured) {
-    return {
-      title: "Blog Post Not Found | UCASCalculator.com",
-      description: "Requested UCAS blog post could not be found.",
-    };
+    return notFoundMeta;
   }
   const post = await client.fetch<SanityPost | null>(
     POST_BY_SLUG_QUERY,
@@ -45,10 +55,7 @@ export async function generateMetadata(
   );
 
   if (!post) {
-    return {
-      title: "Blog Post Not Found | UCASCalculator.com",
-      description: "Requested UCAS blog post could not be found.",
-    };
+    return notFoundMeta;
   }
 
   return buildPostMetadata(post, params.slug);

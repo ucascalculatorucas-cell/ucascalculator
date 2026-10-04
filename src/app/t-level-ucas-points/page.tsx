@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Script from "next/script";
 import Link from "next/link";
 import { IconTLevel, IconCalculator, IconTable, IconBTEC, IconALevel } from "@/components/icons";
@@ -7,9 +8,9 @@ const DATE_PUBLISHED = "2026-08-19";
 const DATE_MODIFIED = "2026-08-21";
 
 export const metadata: Metadata = {
-  title: "T-Level UCAS Points | 2025/26 Distinction* to Near Pass Tariff Guide",
+  title: "T-Level UCAS Points 2025/26 | Official Full Tariff",
   description:
-    "T-Level UCAS points 2025/26 official tariff table: Distinction*=168, Distinction=144, Merit=120, Pass=96, Near Pass=72. A-Level equivalence, university acceptance rules and ten real-user FAQs.",
+    "Official T-Level UCAS Tariff from Distinction* (168) to Near Pass (72), A-Level equivalence, and how universities treat T-Levels for 2025 and 2026 entry.",
   keywords: [
     "t level ucas points",
     "t-level distinction ucas points",
@@ -24,23 +25,15 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/t-level-ucas-points" },
-  openGraph: {
-    title: "T-Level UCAS Points | 2025/26 Distinction* – Near Pass Official Tariff",
+  ...socialMetadata({
+    title: "T-Level UCAS Points 2025/26 | Official Full Tariff",
     description:
-      "T-Level Distinction* = 168 UCAS points (A*A*A* eq). Full five-grade table, A-Level bar chart equivalence and university acceptance FAQ.",
-    url: "https://ucascalculator.com/t-level-ucas-points",
+      "Official T-Level UCAS Tariff from Distinction* (168) to Near Pass (72), A-Level equivalence, and how universities treat T-Levels for 2025 and 2026 entry.",
+    path: "/t-level-ucas-points",
     type: "article",
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    locale: "en_GB",
-    siteName: "UCASCalculator.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "T-Level UCAS Points | D*=168, D=144, M=120, P=96, NearP=72",
-    description:
-      "Official 2025/26 UCAS Tariff values for T-Levels with three-A-Level-size equivalence chart and real university acceptance FAQ.",
-  },
+  }),
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 

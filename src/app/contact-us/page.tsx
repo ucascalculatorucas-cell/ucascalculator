@@ -1,29 +1,21 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | UCASCalculator.com",
+  title: "Contact Us | UCAS Tariff Help, Fixes, and Feedback",
   description:
-    "Contact UCASCalculator.com for UCAS Tariff questions, table corrections, accessibility feedback, business enquiries and privacy requests. Email ucascalculatorucas@gmail.com.",
+    "Get help with UCAS Tariff questions, table corrections, accessibility feedback or privacy requests. We aim to reply within a few working days by email.",
   alternates: {
     canonical: "/contact-us",
   },
-  openGraph: {
-    title: "Contact Us | UCASCalculator.com",
+  ...socialMetadata({
+    title: "Contact Us | UCAS Tariff Help, Fixes, and Feedback",
     description:
-      "Get in touch with UCASCalculator.com for tariff questions, error reports, accessibility feedback and privacy requests. We aim to respond within a few working days.",
-    url: "https://ucascalculator.com/contact-us",
-    siteName: "UCASCalculator.com",
-    locale: "en_GB",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact Us | UCASCalculator.com",
-    description:
-      "Contact UCASCalculator.com at ucascalculatorucas@gmail.com for general enquiries and privacy requests.",
-  },
+      "Get help with UCAS Tariff questions, table corrections, accessibility feedback or privacy requests. We aim to reply within a few working days by email.",
+    path: "/contact-us",
+  }),
   robots: {
     index: true,
     follow: true,

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title:
-    "Terms and Conditions | UCASCalculator.com",
+  title: "Terms and Conditions | Rules for Using This Free Site",
   description:
-    "Terms and conditions governing the use of UCASCalculator.com. Includes our accuracy disclaimer for the UCAS Tariff calculator, intellectual property rights, user conduct rules, limitation of liability and governing law for England and Wales.",
+    "Terms for using this free UCAS Tariff calculator and guides, including accuracy limits, intellectual property, user conduct, liability and UK governing law.",
   keywords: [
     "terms and conditions",
     "terms of service",
@@ -19,21 +19,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/terms-and-conditions",
   },
-  openGraph: {
-    title: "Terms and Conditions | UCASCalculator.com",
+  ...socialMetadata({
+    title: "Terms and Conditions | Rules for Using This Free Site",
     description:
-      "Full terms and conditions for using UCASCalculator.com, including the UCAS Tariff calculator accuracy disclaimer, intellectual property notice, user conduct, liability and governing law.",
-    url: "https://ucascalculator.com/terms-and-conditions",
-    type: "website",
-    locale: "en_GB",
-    siteName: "UCASCalculator.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Terms and Conditions | UCASCalculator.com",
-    description:
-      "Terms of service, accuracy disclaimer and legal notice for UCASCalculator.com.",
-  },
+      "Terms for using this free UCAS Tariff calculator and guides, including accuracy limits, intellectual property, user conduct, liability and UK governing law.",
+    path: "/terms-and-conditions",
+  }),
   robots: {
     index: true,
     follow: true,

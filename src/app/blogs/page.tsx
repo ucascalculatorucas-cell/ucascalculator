@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
@@ -6,26 +7,17 @@ import type { SanityPostListItem } from "@/sanity/types";
 import { formatBlogDate } from "@/lib/formatDate";
 
 export const metadata: Metadata = {
-  title: "UCAS Blog | Tariff Tips, Results Day & Clearing Guides",
+  title: "UCAS Advice Blog | Tariff, Results Day and Clearing",
   description:
-    "UCASCalculator.com blog — UCAS Tariff explainers, Clearing 2025/26 strategies, Results Day checklists, BTEC/T-Level/IB deep-dives and grade-equivalence articles.",
+    "Read UCAS Tariff explainers, Results Day checklists, Clearing strategies and guides on BTEC, T-Levels and IB for students, parents and school advisers.",
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/blogs" },
-  openGraph: {
-    title: "UCAS Blog | Tariff Tips, Results Day & Clearing Guides",
+  ...socialMetadata({
+    title: "UCAS Advice Blog | Tariff, Results Day and Clearing",
     description:
-      "UCASCalculator.com blog — Tariff explainers, Clearing 2025/26 strategies, Results Day checklists, BTEC/T-Level/IB deep-dives and grade-equivalence articles.",
-    url: "https://ucascalculator.com/blogs",
-    siteName: "UCASCalculator.com",
-    locale: "en_GB",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "UCAS Blog | Tariff Tips, Results Day & Clearing Guides",
-    description:
-      "UCASCalculator.com blog — Tariff explainers, Clearing 2025/26 strategies, Results Day checklists, BTEC/T-Level/IB deep-dives and grade-equivalence articles.",
-  },
+      "Read UCAS Tariff explainers, Results Day checklists, Clearing strategies and guides on BTEC, T-Levels and IB for students, parents and school advisers.",
+    path: "/blogs",
+  }),
 };
 
 export const revalidate = 60;

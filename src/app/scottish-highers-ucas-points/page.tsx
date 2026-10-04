@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Script from "next/script";
 import Link from "next/link";
 import { IconScottish, IconCalculator, IconTable, IconALevel, IconIB } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title:
-    "Scottish Highers UCAS Points 2025/2026 | Advanced Higher & Higher — Band 1 / Band 2 Split",
+  title: "Scottish Highers UCAS Points | Band 1 and Band 2 Table",
   description:
-    "Scottish Higher and Advanced Higher UCAS points with the full Band-1 and Band-2 sub-grade split. Exact SQA grade-to-Tariff table for A through D grades, A-Level equivalence visual and counting rules for 2025 and 2026 entry.",
+    "Scottish Higher and Advanced Higher UCAS points with Band 1 and Band 2 splits. Full SQA grade tables and A-Level equivalence for 2025 and 2026 university entry.",
   keywords: [
     "scottish highers ucas points",
     "scottish higher ucas points",
@@ -22,20 +22,12 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/scottish-highers-ucas-points" },
-  openGraph: {
-    title: "Scottish Highers & Advanced Higher UCAS Points — Band-1 / Band-2 Tables",
+  ...socialMetadata({
+    title: "Scottish Highers UCAS Points | Band 1 and Band 2 Table",
     description:
-      "Full SQA A to D grade tables with Band-1 / Band-2 granular split, UCAS points values and A-Level equivalence charts.",
-    url: "https://ucascalculator.com/scottish-highers-ucas-points",
-    type: "website",
-    locale: "en_GB",
-    siteName: "UCASCalculator.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Scottish Highers UCAS Points Tables",
-    description: "Higher and Advanced Higher Band-1 / Band-2 split tables.",
-  },
+      "Scottish Higher and Advanced Higher UCAS points with Band 1 and Band 2 splits. Full SQA grade tables and A-Level equivalence for 2025 and 2026 university entry.",
+    path: "/scottish-highers-ucas-points",
+  }),
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 

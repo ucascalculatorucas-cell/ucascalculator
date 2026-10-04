@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteChrome } from "@/components/SiteChrome";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { DEFAULT_OG_IMAGES, SITE_NAME } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,12 +21,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ucascalculator.com"),
-  title: {
-    default: "UCAS Tariff Points Calculator & Grade Guides 2025/26",
-    template: "%s | UCASCalculator.com",
-  },
+  title: "Free UCAS Tariff Points Calculator | 2025/26 Guide",
   description:
-    "Free UCAS Tariff points calculator & grade guides for A-Level, BTEC, IB, Scottish Highers, T-Levels, Access & EPQ. 2025/26 values. No signup.",
+    "Free UCAS Tariff points calculator and grade guides for A-Level, BTEC, IB, Scottish Highers, T-Levels, Access and EPQ. Official 2025/26 values, no signup.",
   keywords: [
     "ucas calculator",
     "ucas tariff points calculator",
@@ -34,23 +32,25 @@ export const metadata: Metadata = {
     "ucas tariff table 2025",
     "ucas tariff table 2026",
   ],
-  authors: [{ name: "UCASCalculator.com" }],
-  creator: "UCASCalculator.com",
-  publisher: "UCASCalculator.com",
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   openGraph: {
-    title: "UCAS Tariff Points Calculator & Grade Guides 2025/26",
+    title: "Free UCAS Tariff Points Calculator | 2025/26 Guide",
     description:
-      "Free UCAS Tariff calculator & guides for A-Level, BTEC, IB, Scottish, T-Levels, Access & EPQ. 2025/26 values.",
+      "Free UCAS Tariff points calculator and grade guides for A-Level, BTEC, IB, Scottish Highers, T-Levels, Access and EPQ. Official 2025/26 values, no signup.",
     url: "https://ucascalculator.com/",
-    siteName: "UCASCalculator.com",
+    siteName: SITE_NAME,
     locale: "en_GB",
     type: "website",
+    images: DEFAULT_OG_IMAGES,
   },
   twitter: {
     card: "summary_large_image",
-    title: "UCAS Tariff Points Calculator & Guides 2025/26",
+    title: "Free UCAS Tariff Points Calculator | 2025/26 Guide",
     description:
-      "Free UCAS Tariff calculator for A-Level, BTEC, IB, Scottish, T-Levels, Access & EPQ.",
+      "Free UCAS Tariff points calculator and grade guides for A-Level, BTEC, IB, Scottish Highers, T-Levels, Access and EPQ. Official 2025/26 values, no signup.",
+    images: [DEFAULT_OG_IMAGES[0].url],
   },
   robots: {
     index: true,
@@ -88,10 +88,10 @@ export const metadata: Metadata = {
       },
     ],
   },
-  applicationName: "UCASCalculator.com",
+  applicationName: SITE_NAME,
   appleWebApp: {
     capable: true,
-    title: "UCASCalculator.com",
+    title: SITE_NAME,
     statusBarStyle: "default",
   },
   formatDetection: {

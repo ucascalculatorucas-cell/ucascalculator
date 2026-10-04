@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Link from "next/link";
 import UcasCalculator from "@/components/UcasCalculator";
+import { socialMetadata } from "@/lib/seo";
 import { REFERENCE_BENCHMARKS } from "@/lib/ucasTariff";
 import {
   IconCalculator,
@@ -24,10 +25,9 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title:
-    "UCAS Tariff Points Calculator 2025/2026 | A-Level, BTEC, IB, Scottish, T-Level & EPQ",
+  title: "Free UCAS Tariff Points Calculator | 2025/26 Guide",
   description:
-    "UCAS Tariff Points Calculator 2025/2026. Convert A-Levels, BTEC Nationals, IB HL/SL, Scottish Highers & Advanced Highers, T-Levels, Access to HE Diplomas and EPQ grades into UCAS points instantly. Complete Tariff table, grade equivalence charts and official 2017-reform values cross-checked against UCAS.",
+    "Convert A-Level, BTEC, IB, Scottish Highers, T-Level, Access and EPQ grades into UCAS Tariff points instantly. Free 2025/26 calculator with official tables.",
   keywords: [
     "ucas tariff points calculator",
     "ucas points calculator",
@@ -52,21 +52,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  openGraph: {
-    title: "UCAS Tariff Points Calculator 2025/2026 — A-Level, BTEC, IB & More",
+  ...socialMetadata({
+    title: "Free UCAS Tariff Points Calculator | 2025/26 Guide",
     description:
-      "Instant UCAS points converter for A-Level, BTEC, IB, Scottish Highers, T-Levels, Access to HE and EPQ. Complete 2025/26 Tariff table, grade charts and official values.",
-    url: "https://ucascalculator.com/",
-    type: "website",
-    locale: "en_GB",
-    siteName: "UCASCalculator.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "UCAS Tariff Points Calculator 2025/2026",
-    description:
-      "Official UCAS 2017-reform points calculator for A-Level, BTEC, IB, Scotland, T-Level, Access & EPQ.",
-  },
+      "Convert A-Level, BTEC, IB, Scottish Highers, T-Level, Access and EPQ grades into UCAS Tariff points instantly. Free 2025/26 calculator with official tables.",
+    path: "/",
+  }),
   robots: {
     index: true,
     follow: true,

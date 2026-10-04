@@ -1,27 +1,19 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Disclaimer & UCAS Notice | UCASCalculator.com",
+  title: "Disclaimer | Independent Site Not Affiliated With UCAS",
   description:
-    "UCASCalculator.com disclaimer — not affiliated with UCAS. All Tariff figures are 2017-reform based for 2025/26 entry; always cross-check against UCAS.com and universities.",
+    "This calculator is independent and not affiliated with UCAS. Always verify Tariff figures with UCAS and your chosen universities before you apply for a course.",
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/disclaimer" },
-  openGraph: {
-    title: "Disclaimer & UCAS Notice | UCASCalculator.com",
+  ...socialMetadata({
+    title: "Disclaimer | Independent Site Not Affiliated With UCAS",
     description:
-      "UCASCalculator.com is independent and not affiliated with UCAS. Tariff figures 2017-reform based for 2025/26 entry — verify with UCAS.com and universities.",
-    url: "https://ucascalculator.com/disclaimer",
-    siteName: "UCASCalculator.com",
-    locale: "en_GB",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Disclaimer & UCAS Notice | UCASCalculator.com",
-    description:
-      "UCASCalculator.com is independent and not affiliated with UCAS. Tariff figures 2017-reform based for 2025/26 entry — verify with UCAS.com and universities.",
-  },
+      "This calculator is independent and not affiliated with UCAS. Always verify Tariff figures with UCAS and your chosen universities before you apply for a course.",
+    path: "/disclaimer",
+  }),
 };
 
 const LAST_UPDATED = "21 August 2026";

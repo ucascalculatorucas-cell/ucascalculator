@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Us | Independent Free UCAS Tariff Calculator",
   description:
-    "Learn about UCASCalculator.com — founded in London 2024 by former university admissions tutors and teachers. Our editorial process, independence policy, and how we cross-check every UCAS Tariff value against the official 2025/26 table.",
+    "Independent UCAS Tariff calculator and guides founded in London. See how we cross-check every 2025/26 grade value against the official UCAS Tariff table.",
   alternates: {
     canonical: "/about-us",
   },
-  openGraph: {
-    title: "About Us | UCASCalculator.com",
+  ...socialMetadata({
+    title: "About Us | Independent Free UCAS Tariff Calculator",
     description:
-      "Founded 2024 in London by ex-university admissions tutors and teachers. Independent UCAS Tariff tools built on the official 2025/26 table, cross-checked against 2017+ tariff cycles.",
-    url: "https://ucascalculator.com/about-us",
-    siteName: "UCASCalculator.com",
-    locale: "en_GB",
-    type: "website",
-  },
+      "Independent UCAS Tariff calculator and guides founded in London. See how we cross-check every 2025/26 grade value against the official UCAS Tariff table.",
+    path: "/about-us",
+  }),
   robots: {
     index: true,
     follow: true,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   IconMail,
@@ -7,27 +8,18 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | Your Data Rights Are Fully Explained",
   description:
-    "Privacy Policy for UCASCalculator.com. Learn what personal data we collect, how we use cookies (including Google Analytics 4), your rights under GDPR, UK GDPR and CCPA/CPRA, and how to contact our Data Protection Officer.",
+    "What personal data this UCAS Tariff site collects, how cookies and analytics work, your GDPR and CCPA rights, and how to contact us about privacy requests.",
   alternates: {
     canonical: "/privacy-policy",
   },
-  openGraph: {
-    title: "Privacy Policy | UCASCalculator.com",
+  ...socialMetadata({
+    title: "Privacy Policy | Your Data Rights Are Fully Explained",
     description:
-      "GDPR, UK GDPR and CCPA/CPRA compliant privacy notice for UCASCalculator.com. Covers data collection, GA4 cookies, data retention and user rights.",
-    url: "https://ucascalculator.com/privacy-policy",
-    siteName: "UCASCalculator.com",
-    locale: "en_GB",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Privacy Policy | UCASCalculator.com",
-    description:
-      "Full privacy notice: data we collect, cookies (GA4), GDPR/CCPA rights and how to contact our DPO.",
-  },
+      "What personal data this UCAS Tariff site collects, how cookies and analytics work, your GDPR and CCPA rights, and how to contact us about privacy requests.",
+    path: "/privacy-policy",
+  }),
   robots: {
     index: true,
     follow: true,

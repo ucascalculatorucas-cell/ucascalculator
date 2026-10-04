@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Script from "next/script";
 import Link from "next/link";
 import {
@@ -16,10 +17,9 @@ const DATE_PUBLISHED = "2026-08-19";
 const DATE_MODIFIED = "2026-08-20";
 
 export const metadata: Metadata = {
-  title:
-    "Access to HE & EPQ UCAS Points | 2025/26 Tariff Guide — Access Diploma D/M/P Combinations + EPQ A* to E",
+  title: "Access to HE and EPQ UCAS Points | Full 2025/26 Guide",
   description:
-    "Access to HE Diploma 45-graded-credit D/M/P combinations (45D=144=AAA through 45P=72) and EPQ A* to E grade UCAS Tariff points 2025/26. A-Level equivalence visuals, Russell Group EPQ counting rules, Access to HE unit rules and common gotchas with full FAQ.",
+    "Access to HE Diploma D/M/P combinations and EPQ A* to E UCAS Tariff points for 2025/26. Includes counting rules, A-Level equivalence and common FAQs too.",
   keywords: [
     "access to he ucas points",
     "access to he diploma ucas points",
@@ -37,23 +37,15 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/access-epq-ucas-points" },
-  openGraph: {
-    title: "Access to HE & EPQ UCAS Points | 2025/26 D/M/P + A*–E Tariff",
+  ...socialMetadata({
+    title: "Access to HE and EPQ UCAS Points | Full 2025/26 Guide",
     description:
-      "Access to HE Diploma 45D through 45P combinations, EPQ A* to E grades, Access to HE unit counting rules and Russell Group EPQ exclusion rules — 2025/26 UCAS Tariff.",
-    url: "https://ucascalculator.com/access-epq-ucas-points",
+      "Access to HE Diploma D/M/P combinations and EPQ A* to E UCAS Tariff points for 2025/26. Includes counting rules, A-Level equivalence and common FAQs too.",
+    path: "/access-epq-ucas-points",
     type: "article",
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    locale: "en_GB",
-    siteName: "UCASCalculator.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Access & EPQ UCAS Points 2025/26",
-    description:
-      "Access 45D = 144 pts, EPQ A* = 28 pts. Full Tariff lookup + counting rules FAQ.",
-  },
+  }),
   robots: {
     index: true,
     follow: true,

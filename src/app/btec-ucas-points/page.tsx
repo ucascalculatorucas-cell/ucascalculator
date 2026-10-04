@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Script from "next/script";
 import Link from "next/link";
 import { IconBTEC, IconCalculator, IconTable, IconALevel, IconScottish } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title:
-    "BTEC UCAS Points 2025/2026 | Extended, Diploma, Subsidiary, Certificate Tariff Tables",
+  title: "BTEC UCAS Points 2025/26 | All Four Size Lookup Tables",
   description:
-    "BTEC National UCAS points tariff tables for Extended Diploma, Diploma, Subsidiary Diploma and 90-credit Certificate sizes. QCF vs RQF differences, grade-by-grade D*D*D* to PPP values, A-Level equivalence and BTEC counting rules for 2025/26 entry.",
+    "BTEC National UCAS points for Extended Diploma, Diploma, Subsidiary and Certificate sizes. Grade-by-grade tables, QCF vs RQF notes and A-Level equivalence.",
   keywords: [
     "btec ucas points",
     "btec extended diploma ucas points",
@@ -23,20 +23,12 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/btec-ucas-points" },
-  openGraph: {
-    title: "BTEC UCAS Points — 2025/2026 Tariff Tables for All Four BTEC Sizes",
+  ...socialMetadata({
+    title: "BTEC UCAS Points 2025/26 | All Four Size Lookup Tables",
     description:
-      "BTEC Extended, Diploma, Subsidiary, Certificate grade-by-grade UCAS Tariff, QCF vs RQF distinction, GLH size scaling and A-Level equivalence visual.",
-    url: "https://ucascalculator.com/btec-ucas-points",
-    type: "website",
-    locale: "en_GB",
-    siteName: "UCASCalculator.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "BTEC UCAS Points — 2025/2026 Tariff Tables",
-    description: "Extended Diploma / Diploma / Subsidiary / Certificate BTEC sizes and A-Level equivalence.",
-  },
+      "BTEC National UCAS points for Extended Diploma, Diploma, Subsidiary and Certificate sizes. Grade-by-grade tables, QCF vs RQF notes and A-Level equivalence.",
+    path: "/btec-ucas-points",
+  }),
   robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
 };
 

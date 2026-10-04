@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Script from "next/script";
 import Link from "next/link";
 import { FullTariffTable } from "@/components/FullTariffTable";
@@ -20,10 +21,9 @@ const DATE_PUBLISHED = "2026-08-19";
 const DATE_MODIFIED = "2026-08-21";
 
 export const metadata: Metadata = {
-  title:
-    "UCAS Tariff Points Table 2025/2026 — Complete Searchable & Sortable Table",
+  title: "UCAS Tariff Points Table 2025/26 | Full Searchable",
   description:
-    "Complete 2025/26 UCAS Tariff points table — A-Level, AS, BTEC (all sizes QCF/RQF), IB HL/SL, Scottish Higher & Adv Higher (Band split), T-Levels, Access to HE, EPQ, Welsh Bacc, Irish Leaving Cert, Cambridge Pre-U, Core Maths, OCR Cambridge Techs. Filter, search and sort every published Tariff value, no signup, no CAPTCHA.",
+    "Searchable, sortable UCAS Tariff table for A-Level, BTEC, IB, Scottish Highers, T-Levels, Access to HE, EPQ and more. Official 2025/26 values, free to use.",
   keywords: [
     "ucas tariff table",
     "ucas tariff points table",
@@ -42,21 +42,12 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/ucas-tariff-points-table" },
-  openGraph: {
-    title: "UCAS Tariff Points Table 2025/2026 — Complete, Searchable, Sortable",
+  ...socialMetadata({
+    title: "UCAS Tariff Points Table 2025/26 | Full Searchable",
     description:
-      "Full 2025/26 UCAS Tariff table: A-Level, BTEC (all sizes), IB HL/SL, Scottish Higher + Adv Higher Band split, T-Levels, Access D/M/P combos, EPQ, Welsh Bacc, Irish LC, Pre-U, Core Maths. Filter, sort, search every value.",
-    url: "https://ucascalculator.com/ucas-tariff-points-table",
-    type: "website",
-    locale: "en_GB",
-    siteName: "UCASCalculator.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Full UCAS Tariff Points Table 2025/26",
-    description:
-      "Searchable, sortable complete UCAS Tariff table. A-Level, BTEC, IB, Scottish, T-Level, Access, EPQ and more.",
-  },
+      "Searchable, sortable UCAS Tariff table for A-Level, BTEC, IB, Scottish Highers, T-Levels, Access to HE, EPQ and more. Official 2025/26 values, free to use.",
+    path: "/ucas-tariff-points-table",
+  }),
   robots: {
     index: true,
     follow: true,

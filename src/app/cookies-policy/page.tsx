@@ -1,27 +1,19 @@
 import type { Metadata } from "next";
+import { socialMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Cookies Policy | UCASCalculator.com",
+  title: "Cookies Policy | How This UCAS Tariff Site Uses Them",
   description:
-    "UCASCalculator.com cookies policy — essential cookies, analytics, Google advertising cookies when ads are shown, your choices, and how to manage or delete cookies.",
+    "Learn how this UCAS Tariff site uses essential, analytics and advertising cookies, what choices you have, and how to manage or delete cookies in your browser.",
   metadataBase: new URL("https://ucascalculator.com"),
   alternates: { canonical: "/cookies-policy" },
-  openGraph: {
-    title: "Cookies Policy | UCASCalculator.com",
+  ...socialMetadata({
+    title: "Cookies Policy | How This UCAS Tariff Site Uses Them",
     description:
-      "Learn how UCASCalculator.com uses cookies and similar technologies, including Google services used for analytics and advertising where enabled.",
-    url: "https://ucascalculator.com/cookies-policy",
-    siteName: "UCASCalculator.com",
-    locale: "en_GB",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cookies Policy | UCASCalculator.com",
-    description:
-      "Essential, analytics and advertising cookie information for UCASCalculator.com, plus browser controls and opt-out links.",
-  },
+      "Learn how this UCAS Tariff site uses essential, analytics and advertising cookies, what choices you have, and how to manage or delete cookies in your browser.",
+    path: "/cookies-policy",
+  }),
 };
 
 const LAST_UPDATED = "4 October 2026";
