@@ -7,11 +7,11 @@ import type { NextConfig } from "next";
  */
 const ContentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://cdn.sanity.io",
+  "img-src 'self' data: blob: https://cdn.sanity.io https://www.google-analytics.com https://www.googletagmanager.com",
   "font-src 'self' data:",
-  "connect-src 'self' https://*.api.sanity.io https://*.sanity.io wss://*.api.sanity.io https://cdn.sanity.io",
+  "connect-src 'self' https://*.api.sanity.io https://*.sanity.io wss://*.api.sanity.io https://cdn.sanity.io https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://www.googletagmanager.com",
   "frame-src 'self' https://*.sanity.io",
   "worker-src 'self' blob:",
   "object-src 'none'",

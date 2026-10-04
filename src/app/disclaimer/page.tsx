@@ -188,7 +188,7 @@ export default function DisclaimerPage() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-zinc-200 pt-6 sm:flex-row dark:border-zinc-800">
           <Link
-            href="/terms"
+            href="/terms-and-conditions"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-zinc-200 px-5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-900"
           >
             ← Terms &amp; Conditions
