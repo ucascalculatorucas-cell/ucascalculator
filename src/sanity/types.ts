@@ -55,7 +55,7 @@ export type SanityPostListItem = {
   authors?: Pick<SanityAuthor, "_id" | "name" | "role" | "image">[];
 };
 
-export type SanityPost = SanityPostListItem & {
+export type SanityPost = Omit<SanityPostListItem, "authors"> & {
   body?: PortableTextBlock[];
   seo?: SanitySeo;
   authors?: SanityAuthor[];
