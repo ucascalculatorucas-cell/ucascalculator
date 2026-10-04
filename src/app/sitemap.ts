@@ -1,5 +1,5 @@
 ﻿import type { MetadataRoute } from "next";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { POST_SLUGS_QUERY } from "@/sanity/lib/queries";
 
 const BASE = "https://ucascalculator.com";
@@ -107,16 +107,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   let blogEntries: MetadataRoute.Sitemap = [];
-  try {
-    const posts = await client.fetch<{ slug: string }[]>(POST_SLUGS_QUERY);
-    blogEntries = posts.map((post) => ({
-      url: `${BASE}/blogs/${post.slug}/`,
-      lastModified: LASTMOD,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }));
-  } catch {
-    // Sanity unavailable during build — skip blog URLs
+  if (isSanityConfigured) {
+    try {
+      const posts = await client.fetch<{ slug: string }[]>(POST_SLUGS_QUERY);
+      blogEntries = posts.map((post) => ({
+        url: `${BASE}/blogs/${post.slug}/`,
+        lastModified: LASTMOD,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      }));
+    } catch {
+      // Sanity unavailable during build — skip blog URLs
+    }
   }
 
   return [...staticEntries, ...blogEntries];

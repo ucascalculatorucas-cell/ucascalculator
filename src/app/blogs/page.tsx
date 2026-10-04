@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
 import type { SanityPostListItem } from "@/sanity/types";
 import { formatBlogDate } from "@/lib/formatDate";
@@ -31,7 +31,9 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default async function BlogIndexPage() {
-  const posts = await client.fetch<SanityPostListItem[]>(POSTS_QUERY);
+  const posts = isSanityConfigured
+    ? await client.fetch<SanityPostListItem[]>(POSTS_QUERY)
+    : [];
 
   return (
     <main className="relative mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">

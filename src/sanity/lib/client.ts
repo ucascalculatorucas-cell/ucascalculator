@@ -1,8 +1,8 @@
-import { createClient } from "next-sanity";
-import { apiVersion, dataset, projectId } from "../env";
+import { createClient, type SanityClient } from "next-sanity";
+import { apiVersion, dataset, isSanityConfigured, projectId } from "../env";
 
-export const client = createClient({
-  projectId,
+export const client: SanityClient = createClient({
+  projectId: projectId || "missing-project-id",
   dataset,
   apiVersion,
   useCdn: true,
@@ -10,3 +10,5 @@ export const client = createClient({
     studioUrl: "/studio",
   },
 });
+
+export { isSanityConfigured };

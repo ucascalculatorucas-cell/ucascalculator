@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import {
   POST_BY_SLUG_QUERY,
@@ -20,6 +20,7 @@ interface BlogSlugPageProps {
 export const revalidate = 60;
 
 export async function generateStaticParams() {
+  if (!isSanityConfigured) return [];
   const posts = await client.fetch<{ slug: string }[]>(POST_SLUGS_QUERY);
   return posts.map((post) => ({ slug: post.slug }));
 }
@@ -28,6 +29,12 @@ export async function generateMetadata(
   props: BlogSlugPageProps
 ): Promise<Metadata> {
   const params = await props.params;
+  if (!isSanityConfigured) {
+    return {
+      title: "Blog Post Not Found | UCASCalculator.com",
+      description: "Requested UCAS blog post could not be found.",
+    };
+  }
   const post = await client.fetch<SanityPost | null>(
     POST_BY_SLUG_QUERY,
     { slug: params.slug },
@@ -67,6 +74,8 @@ export async function generateMetadata(
 
 export default async function BlogSlugPage(props: BlogSlugPageProps) {
   const params = await props.params;
+  if (!isSanityConfigured) notFound();
+
   const [post, related] = await Promise.all([
     client.fetch<SanityPost | null>(POST_BY_SLUG_QUERY, {
       slug: params.slug,
