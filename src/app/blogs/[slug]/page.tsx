@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { PortableText } from "next-sanity";
+import { BlogAuthorCard } from "@/components/BlogAuthorCard";
+import { buildArticleJsonLd, buildPostMetadata } from "@/lib/blogSeo";
+import { formatBlogDate } from "@/lib/formatDate";
 import { client, isSanityConfigured } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import {
@@ -11,7 +15,6 @@ import {
   RELATED_POSTS_QUERY,
 } from "@/sanity/lib/queries";
 import type { SanityPost, SanityPostListItem } from "@/sanity/types";
-import { formatBlogDate } from "@/lib/formatDate";
 
 interface BlogSlugPageProps {
   params: Promise<{ slug: string }>;
@@ -48,28 +51,7 @@ export async function generateMetadata(
     };
   }
 
-  return {
-    title: `${post.title} | UCASCalculator Blog`,
-    description: post.excerpt,
-    metadataBase: new URL("https://ucascalculator.com"),
-    alternates: { canonical: `/blogs/${params.slug}/` },
-    openGraph: {
-      title: `${post.title} | UCASCalculator Blog`,
-      description: post.excerpt,
-      url: `https://ucascalculator.com/blogs/${params.slug}/`,
-      siteName: "UCASCalculator.com",
-      locale: "en_GB",
-      type: "article",
-      publishedTime: post.publishedAt,
-      authors: ["UCASCalculator.com"],
-      tags: post.tag ? [post.tag] : undefined,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${post.title} | UCASCalculator Blog`,
-      description: post.excerpt,
-    },
-  };
+  return buildPostMetadata(post, params.slug);
 }
 
 export default async function BlogSlugPage(props: BlogSlugPageProps) {
@@ -91,8 +73,19 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
     ? urlFor(post.mainImage).width(1200).height(630).fit("crop").url()
     : null;
 
+  const authorNames = post.authors?.map((a) => a.name).filter(Boolean) ?? [];
+  const jsonLd = buildArticleJsonLd(post, params.slug);
+
   return (
     <main className="relative mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+      <Script
+        id={`article-jsonld-${params.slug}`}
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify(jsonLd)}
+      </Script>
+
       <article className="mx-auto max-w-3xl rounded-3xl border border-zinc-200 bg-white p-6 sm:p-10 dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex flex-wrap items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
           {post.tag ? (
@@ -105,6 +98,12 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
             <>
               <span>·</span>
               <span>{post.readTime}</span>
+            </>
+          ) : null}
+          {authorNames.length > 0 ? (
+            <>
+              <span>·</span>
+              <span>By {authorNames.join(", ")}</span>
             </>
           ) : null}
         </div>
@@ -135,6 +134,8 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
             <p>This article has no body content yet.</p>
           )}
         </div>
+
+        <BlogAuthorCard authors={post.authors} />
 
         <div className="mt-12 flex flex-col gap-3 border-t border-zinc-200 pt-6 sm:flex-row sm:justify-between dark:border-zinc-800">
           <Link
@@ -177,7 +178,8 @@ export default async function BlogSlugPage(props: BlogSlugPageProps) {
                   </span>
                   <span className="text-xs text-zinc-500 dark:text-zinc-400">
                     {formatBlogDate(p.publishedAt)}
-                    {p.readTime ? ` · ${p.readTime}` : ""} →
+                    {p.readTime ? ` · ${p.readTime}` : ""}
+                    {p.authors?.[0]?.name ? ` · ${p.authors[0].name}` : ""} →
                   </span>
                 </Link>
               </li>

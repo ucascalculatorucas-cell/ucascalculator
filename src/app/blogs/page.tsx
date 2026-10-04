@@ -96,10 +96,17 @@ export default async function BlogIndexPage() {
               <p className="mt-3 flex-1 text-sm leading-6 text-zinc-600 dark:text-zinc-300">
                 {p.excerpt}
               </p>
-              <div className="mt-5 border-t border-zinc-100 pt-4 text-sm font-medium text-indigo-600 dark:border-zinc-800 dark:text-indigo-400">
+              <div className="mt-5 flex items-center justify-between gap-3 border-t border-zinc-100 pt-4 dark:border-zinc-800">
+                {p.authors?.[0]?.name ? (
+                  <span className="truncate text-xs text-zinc-500 dark:text-zinc-400">
+                    By {p.authors[0].name}
+                  </span>
+                ) : (
+                  <span />
+                )}
                 <Link
                   href={`/blogs/${p.slug}/`}
-                  className="inline-flex items-center gap-1"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 dark:text-indigo-400"
                   aria-label={`Read ${p.title}`}
                 >
                   Read article →

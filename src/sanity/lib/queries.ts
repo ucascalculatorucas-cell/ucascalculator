@@ -1,5 +1,40 @@
 import { groq } from "next-sanity";
 
+const authorCardProjection = groq`{
+  _id,
+  name,
+  "slug": slug.current,
+  role,
+  image
+}`;
+
+const authorFullProjection = groq`{
+  _id,
+  name,
+  "slug": slug.current,
+  role,
+  bio,
+  email,
+  image,
+  social
+}`;
+
+const seoProjection = groq`{
+  metaTitle,
+  metaDescription,
+  focusKeyword,
+  keywords,
+  canonicalUrl,
+  noIndex,
+  noFollow,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  twitterTitle,
+  twitterDescription,
+  twitterImage
+}`;
+
 export const POSTS_QUERY = groq`
   *[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
     _id,
@@ -9,7 +44,9 @@ export const POSTS_QUERY = groq`
     tag,
     readTime,
     publishedAt,
-    mainImage
+    updatedAt,
+    mainImage,
+    authors[]->${authorCardProjection}
   }
 `;
 
@@ -28,8 +65,11 @@ export const POST_BY_SLUG_QUERY = groq`
     tag,
     readTime,
     publishedAt,
+    updatedAt,
     mainImage,
-    body
+    body,
+    seo${seoProjection},
+    authors[]->${authorFullProjection}
   }
 `;
 
@@ -40,6 +80,7 @@ export const RELATED_POSTS_QUERY = groq`
     "slug": slug.current,
     tag,
     readTime,
-    publishedAt
+    publishedAt,
+    authors[]->${authorCardProjection}
   }
 `;
